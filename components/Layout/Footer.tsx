@@ -1,0 +1,75 @@
+import { Factory, Mail, MapPin, Phone } from "lucide-react";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
+
+const links = ["Home", "About Us", "Services", "Industries", "Resources", "Contact Us"];
+
+export default function Footer() {
+  return (
+    <footer className="bg-navy text-white">
+      <div className="container grid gap-10 py-12 md:grid-cols-[1.3fr_0.7fr_1fr]">
+        <div>
+          <div className="flex items-center gap-3">
+            <div className="relative h-11 w-13 overflow-hidden rounded-[3px] bg-white">
+              <div className="flex h-full w-full items-center justify-center bg-white">
+                <Factory className="h-6 w-6 text-navy" strokeWidth={2.2} />
+              </div>
+            </div>
+            <div className="leading-none">
+              <div className="font-heading text-[22px] font-extrabold tracking-[0.02em]">NOVACORE</div>
+              <div className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/60">
+                Engineering Group
+              </div>
+            </div>
+          </div>
+          <p className="mt-5 max-w-xl text-[14px] leading-relaxed text-white/68">
+            NovaCore Engineering Group delivers innovative engineering solutions in
+            manufacturing, inspection, industrial services, and consultancy with a
+            commitment to quality, safety, and international standards.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-[14px] font-extrabold uppercase">Navigation</h3>
+          <div className="mt-5 grid gap-3 text-[13px] text-white/70">
+            {links.map((link) => (
+              <a key={link} href={link === "Home" ? "#" : `#${link.toLowerCase().replaceAll(" ", "-")}`} className="hover:text-white">
+                {link}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-[14px] font-extrabold uppercase">Contact</h3>
+          <div className="mt-5 grid gap-4 text-[13px] text-white/70">
+            <a href="mailto:info@novacoregroup.com" className="flex items-center gap-3 hover:text-white">
+              <Mail className="h-4 w-4 text-white" />
+              info@novacoregroup.com
+            </a>
+            <a href="tel:+923434101295" className="flex items-center gap-3 hover:text-white">
+              <Phone className="h-4 w-4 text-white" />
+              +92 343 4101295
+            </a>
+            <span className="flex items-center gap-3">
+              <MapPin className="h-4 w-4 text-white" />
+              Pakistan - Serving Industries Worldwide
+            </span>
+          </div>
+          <div className="mt-6 flex gap-4 text-white">
+            <FaLinkedinIn className="h-4 w-4" />
+            <FaFacebookF className="h-4 w-4" />
+            <FaInstagram className="h-4 w-4" />
+            <FaYoutube className="h-4 w-4" />
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10 py-5">
+        <div className="container flex flex-col gap-2 text-center text-[12px] text-white/52 md:flex-row md:justify-between md:text-left">
+          <span>Copyright 2026. NovaCore Engineering Group.</span>
+          <span>Engineering Beyond Standards</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
