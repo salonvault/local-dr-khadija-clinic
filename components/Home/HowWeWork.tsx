@@ -126,20 +126,44 @@ export default function HowWeWork() {
           </div>
         </Reveal>
 
-        <div className="grid gap-8 pt-14 md:grid-cols-3">
-          {[
-            { label: "Vision", icon: Target, text: "To become one of the world's most trusted engineering companies delivering innovative manufacturing, inspection, industrial services, and engineering solutions." },
-            { label: "Mission", icon: ShieldCheck, text: "To deliver reliable, safe, and cost-effective engineering solutions through technical expertise, innovation, quality management, and continuous improvement." },
-            { label: "Values", icon: Leaf, text: "Integrity, quality, innovation, safety, professionalism, customer commitment, engineering excellence, and sustainability guide every project." },
-          ].map((item) => (
-            <Reveal key={item.label} className="light-card group rounded-[8px] border border-bordercol bg-white p-8 shadow-card transition-all duration-200 hover:-translate-y-1 hover:border-primary-2/35 hover:shadow-lift" delay={0.05}>
+        <div className="grid gap-8 pt-14 lg:grid-cols-[1.25fr_0.75fr] lg:items-stretch">
+          <div className="grid gap-2 md:grid-cols-2">
+            {[
+              { label: "Vision", icon: Target, text: "To become one of the world's most trusted engineering companies delivering innovative manufacturing, inspection, industrial services, and engineering solutions." },
+              { label: "Mission", icon: ShieldCheck, text: "To deliver reliable, safe, and cost-effective engineering solutions through technical expertise, innovation, quality management, and continuous improvement." },
+            ].map((item) => (
+              <Reveal key={item.label} className="light-card group rounded-[8px] border border-bordercol bg-white p-8 shadow-card transition-all duration-200 hover:-translate-y-1 hover:border-primary-2/35 hover:shadow-lift" delay={0.05}>
+                <div className="flex h-13 w-13 items-center justify-center rounded-full bg-linear-to-br from-[#020815] via-navy to-primary-1 text-white shadow-[0_12px_24px_rgba(7,21,44,0.28)]">
+                  <item.icon className="h-7 w-7" />
+                </div>
+                <h3 className="mt-5 text-[20px] font-extrabold uppercase text-navy">{item.label}</h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-steel">{item.text}</p>
+              </Reveal>
+            ))}
+
+            <Reveal className="light-card group rounded-[8px] border border-bordercol bg-white p-8 shadow-card transition-all duration-200 hover:-translate-y-1 hover:border-primary-2/35 hover:shadow-lift md:col-span-2" delay={0.08}>
               <div className="flex h-13 w-13 items-center justify-center rounded-full bg-linear-to-br from-[#020815] via-navy to-primary-1 text-white shadow-[0_12px_24px_rgba(7,21,44,0.28)]">
-                <item.icon className="h-7 w-7" />
+                <Leaf className="h-7 w-7" />
               </div>
-              <h3 className="mt-5 text-[20px] font-extrabold uppercase text-navy">{item.label}</h3>
-              <p className="mt-3 text-[14px] leading-relaxed text-steel">{item.text}</p>
+              <h3 className="mt-5 text-[20px] font-extrabold uppercase text-navy">Values</h3>
+              <p className="mt-3 text-[14px] leading-relaxed text-steel">
+                Integrity, quality, innovation, safety, professionalism, customer
+                commitment, engineering excellence, and sustainability guide every
+                project.
+              </p>
             </Reveal>
-          ))}
+          </div>
+
+          <Reveal className="relative min-h-[420px] overflow-hidden rounded-[8px] shadow-lift" delay={0.12}>
+            <Image
+              src="/assets/mission.png"
+              alt="NovaCore industrial engineering team at work"
+              fill
+              sizes="(min-width: 1024px) 34vw, 100vw"
+              className="object-cover object-bottom"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-navy/44 via-transparent to-transparent" />
+          </Reveal>
         </div>
       </div>
     </section>
