@@ -1,5 +1,4 @@
 import { CheckCircle2, Factory, GraduationCap, Landmark, RadioTower, ShieldAlert, Wrench, Zap } from "lucide-react";
-import { Reveal } from "@/components/ui/reveal";
 
 const divisions = [
   { name: "NovaCore Manufacturing", icon: Factory },
@@ -17,7 +16,7 @@ export default function Testimonials() {
     <section id="resources" className="section-pad bg-white">
       <div className="container">
         <div className="grid gap-8 lg:grid-cols-2">
-          <Reveal className="light-card rounded-[6px] border border-bordercol bg-white p-8 shadow-card">
+          <article className="rounded-[6px] border border-bordercol bg-white p-8 shadow-card">
             <p className="eyebrow">Quality Policy</p>
             <h2 className="heading-md mt-3 text-navy">Consistency, compliance, and continuous improvement</h2>
             <p className="body-lg mt-5 text-steel">
@@ -26,9 +25,9 @@ export default function Testimonials() {
               regulations, and recognized engineering standards while continuously
               improving quality, safety, and operational excellence.
             </p>
-          </Reveal>
+          </article>
 
-          <Reveal className="light-card rounded-[6px] bg-navy p-8 text-white shadow-soft" delay={0.08}>
+          <article className="rounded-[6px] bg-navy p-8 text-white shadow-soft">
             <p className="eyebrow text-accent">Health, Safety & Environment</p>
             <h2 className="heading-md mt-3 text-white">Safety remains our highest priority</h2>
             <p className="body-lg mt-5 text-white/76">
@@ -36,21 +35,21 @@ export default function Testimonials() {
               environment by promoting safe engineering practices, continuous
               training, hazard prevention, and compliance with applicable regulations.
             </p>
-          </Reveal>
+          </article>
         </div>
 
         <div className="mt-16">
-          <Reveal className="mx-auto mb-10 max-w-3xl text-center">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
             <p className="eyebrow">Future Business Divisions</p>
             <h2 className="heading-lg mt-2 text-navy">A Group Platform Built for <br className="hidden md:block" /> Global Industry</h2>
-          </Reveal>
+          </div>
 
           <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
             {divisions.map((division) => (
-              <Reveal key={division.name} className="light-card rounded-[6px] border border-bordercol bg-panel p-4 transition-colors hover:border-primary-2 hover:bg-white sm:p-6" delay={0.04}>
+              <article key={division.name} className="rounded-[6px] border border-bordercol bg-panel p-4 sm:p-6">
                 <division.icon className="h-7 w-7 text-primary-2 sm:h-8 sm:w-8" />
                 <h3 className="mt-4 text-[14px] font-extrabold leading-tight text-navy sm:mt-5 sm:text-[17px]">{division.name}</h3>
-              </Reveal>
+              </article>
             ))}
           </div>
         </div>

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Reveal } from "@/components/ui/reveal";
 import {
   BadgeCheck,
   Building2,
@@ -73,17 +72,16 @@ export default function Services() {
   return (
     <section id="services" className="section-pad bg-white">
       <div className="container">
-        <Reveal className="mx-auto mb-16 max-w-3xl text-center">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
           <p className="eyebrow">What We Do</p>
           <h2 className="heading-lg mt-2 text-navy">Our Core Services</h2>
-        </Reveal>
+        </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <Reveal
+          {services.map((service) => (
+            <article
               key={service.title}
-              delay={(index % 3) * 0.05}
-              className="light-card group overflow-hidden rounded-[4px] border border-bordercol bg-white shadow-card transition-transform duration-200 hover:-translate-y-1"
+              className="overflow-hidden rounded-[4px] border border-bordercol bg-white shadow-card"
             >
               <div className="relative h-58 overflow-hidden bg-navy">
                 <Image
@@ -91,7 +89,7 @@ export default function Services() {
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-navy/38 to-transparent" />
               </div>
@@ -104,7 +102,7 @@ export default function Services() {
                 </h3>
                 <p className="mt-4 min-h-[54px] text-[13px] leading-relaxed text-steel">{service.text}</p>
               </div>
-            </Reveal>
+            </article>
           ))}
         </div>
       </div>

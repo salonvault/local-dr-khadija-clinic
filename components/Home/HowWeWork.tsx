@@ -13,7 +13,6 @@ import {
   Wheat,
   Zap,
 } from "lucide-react";
-import { Reveal } from "@/components/ui/reveal";
 import Image from "next/image";
 
 const whyItems = [
@@ -44,7 +43,7 @@ export default function HowWeWork() {
   return (
     <section id="about-us" className="bg-panel py-4 lg:py-28">
       <div className="container">
-        <Reveal className="grid gap-10 rounded-[8px] border border-white/10 bg-linear-to-br from-navy via-navy-2 to-[#082c58] p-7 text-white shadow-lift lg:grid-cols-[1fr_1.55fr_0.9fr] lg:p-10">
+        <div className="grid gap-10 rounded-[8px] border border-white/10 bg-linear-to-br from-navy via-navy-2 to-[#082c58] p-7 text-white shadow-lift lg:grid-cols-[1fr_1.55fr_0.9fr] lg:p-10">
           <div>
             <p className="eyebrow text-accent">Why Choose NovaCore?</p>
             <h2 className="mt-2 text-[23px] font-extrabold uppercase leading-tight text-white">
@@ -76,14 +75,14 @@ export default function HowWeWork() {
               Request a Quote
             </a>
           </div>
-        </Reveal>
+        </div>
 
         <div className="grid gap-12 py-24 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <Reveal>
+          <div>
             <p className="eyebrow">Company Introduction</p>
             <h2 className="heading-lg mt-3 text-navy">Built for Critical Industrial Systems</h2>
-          </Reveal>
-          <Reveal className="space-y-5 text-[16px] leading-[1.85] text-steel" delay={0.08}>
+          </div>
+          <div className="space-y-5 text-[16px] leading-[1.85] text-steel">
             <p>
               NovaCore Engineering Group is committed to delivering high-quality
               engineering solutions through innovation, technical excellence, and
@@ -95,10 +94,10 @@ export default function HowWeWork() {
               professional inspection services that enhance industrial safety and
               operational efficiency.
             </p>
-          </Reveal>
+          </div>
         </div>
 
-        <Reveal id="industries" className="overflow-hidden rounded-[8px] bg-linear-to-br from-navy via-navy-2 to-primary-1 p-4 text-white shadow-lift md:p-10">
+        <div id="industries" className="overflow-hidden rounded-[8px] bg-linear-to-br from-navy via-navy-2 to-primary-1 p-4 text-white shadow-lift md:p-10">
           <div className="mx-auto mb-9 max-w-3xl text-center">
             <p className="eyebrow text-accent">Industries We Serve</p>
             <h3 className="heading-md mt-3 text-white">
@@ -113,9 +112,9 @@ export default function HowWeWork() {
             {industries.map((industry) => (
               <div
                 key={industry.name}
-                className="light-card group flex min-h-32 flex-col items-center justify-center gap-3 rounded-[6px] border border-white/12 bg-white/[0.06] p-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-200 hover:-translate-y-1 hover:border-accent/55 hover:bg-white/[0.1] hover:shadow-[0_18px_36px_rgba(0,0,0,0.18)]"
+                className="flex min-h-32 flex-col items-center justify-center gap-3 rounded-[6px] border border-white/12 bg-white/[0.06] p-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-primary-1 shadow-[0_10px_24px_rgba(42,167,223,0.2)] transition-transform duration-200 group-hover:scale-105">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-primary-1 shadow-[0_10px_24px_rgba(42,167,223,0.2)]">
                   <industry.icon className="h-6 w-6 stroke-[1.8]" />
                 </div>
                 <span className="text-[13px] font-extrabold uppercase leading-tight text-white">
@@ -124,7 +123,7 @@ export default function HowWeWork() {
               </div>
             ))}
           </div>
-        </Reveal>
+        </div>
 
         <div className="grid gap-8 pt-14 lg:grid-cols-[1.25fr_0.75fr] lg:items-stretch">
           <div className="grid gap-2 md:grid-cols-2">
@@ -132,16 +131,16 @@ export default function HowWeWork() {
               { label: "Vision", icon: Target, text: "To become one of the world's most trusted engineering companies delivering innovative manufacturing, inspection, industrial services, and engineering solutions." },
               { label: "Mission", icon: ShieldCheck, text: "To deliver reliable, safe, and cost-effective engineering solutions through technical expertise, innovation, quality management, and continuous improvement." },
             ].map((item) => (
-              <Reveal key={item.label} className="light-card group rounded-[8px] border border-bordercol bg-white p-8 shadow-card transition-all duration-200 hover:-translate-y-1 hover:border-primary-2/35 hover:shadow-lift" delay={0.05}>
+              <article key={item.label} className="rounded-[8px] border border-bordercol bg-white p-8 shadow-card">
                 <div className="flex h-13 w-13 items-center justify-center rounded-full bg-linear-to-br from-[#020815] via-navy to-primary-1 text-white shadow-[0_12px_24px_rgba(7,21,44,0.28)]">
                   <item.icon className="h-7 w-7" />
                 </div>
                 <h3 className="mt-5 text-[20px] font-extrabold uppercase text-navy">{item.label}</h3>
                 <p className="mt-3 text-[14px] leading-relaxed text-steel">{item.text}</p>
-              </Reveal>
+              </article>
             ))}
 
-            <Reveal className="light-card group rounded-[8px] border border-bordercol bg-white p-8 shadow-card transition-all duration-200 hover:-translate-y-1 hover:border-primary-2/35 hover:shadow-lift md:col-span-2" delay={0.08}>
+            <article className="rounded-[8px] border border-bordercol bg-white p-8 shadow-card md:col-span-2">
               <div className="flex h-13 w-13 items-center justify-center rounded-full bg-linear-to-br from-[#020815] via-navy to-primary-1 text-white shadow-[0_12px_24px_rgba(7,21,44,0.28)]">
                 <Leaf className="h-7 w-7" />
               </div>
@@ -151,10 +150,10 @@ export default function HowWeWork() {
                 commitment, engineering excellence, and sustainability guide every
                 project.
               </p>
-            </Reveal>
+            </article>
           </div>
 
-          <Reveal className="relative min-h-[420px] overflow-hidden rounded-[8px] shadow-lift" delay={0.12}>
+          <div className="relative min-h-[420px] overflow-hidden rounded-[8px] shadow-lift">
             <Image
               src="/assets/mission.png"
               alt="NovaCore industrial engineering team at work"
@@ -163,7 +162,7 @@ export default function HowWeWork() {
               className="object-cover object-bottom"
             />
             <div className="absolute inset-0 bg-linear-to-t from-navy/44 via-transparent to-transparent" />
-          </Reveal>
+          </div>
         </div>
       </div>
     </section>

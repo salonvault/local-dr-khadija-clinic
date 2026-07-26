@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { ArrowRight, Award, Clock3, Cog, ShieldCheck, UsersRound } from "lucide-react";
-import { Reveal } from "@/components/ui/reveal";
 
 const strengths = [
   {
@@ -50,7 +49,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-linear-to-r from-navy via-navy/90 to-transparent md:via-navy/30" />
 
         <div className="container relative z-10 flex min-h-[400px] items-center py-14 lg:min-h-[410px]">
-          <Reveal className="max-w-3xl">
+          <div className="max-w-3xl">
             <p className="eyebrow mb-3 text-accent">NovaCore Engineering Group</p>
             <h1 className="heading-xl max-w-3xl uppercase text-white">
               Engineering Beyond Standards
@@ -70,14 +69,14 @@ export default function Hero() {
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
-          </Reveal>
+          </div>
         </div>
       </div>
 
       <div className="relative bg-navy">
         <div className="container grid grid-cols-1 divide-y divide-white/14 py-6 text-white sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-5">
           {strengths.map((item) => (
-            <Reveal key={item.title} className="flex items-start gap-4 px-2 py-4 lg:px-6" delay={0.05}>
+            <div key={item.title} className="flex items-start gap-4 px-2 py-4 lg:px-6">
               <item.icon className="mt-1 h-10 w-10 shrink-0 stroke-[1.6]" />
               <div>
                 <h3 className="text-[13px] font-extrabold uppercase leading-tight">
@@ -88,7 +87,7 @@ export default function Hero() {
                 </h3>
                 <p className="mt-2 text-[12px] leading-relaxed text-white/72">{item.text}</p>
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>
