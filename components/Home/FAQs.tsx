@@ -61,7 +61,7 @@ export default function FAQs() {
         </div>
 
         <div className="grid gap-6">
-          <form className="rounded-[6px] bg-white p-6 shadow-card md:p-8">
+          <form className="light-card rounded-[6px] bg-white p-6 shadow-card md:p-8">
             <div className="grid gap-4 md:grid-cols-2">
               <input className="h-12 rounded-[4px] border border-bordercol px-4 text-[14px] outline-none focus:border-primary-2" placeholder="Your Name" />
               <input className="h-12 rounded-[4px] border border-bordercol px-4 text-[14px] outline-none focus:border-primary-2" placeholder="Company" />
@@ -75,7 +75,7 @@ export default function FAQs() {
             </button>
           </form>
 
-          <div className="rounded-[6px] bg-white p-4 shadow-card">
+          <div className="light-card rounded-[6px] bg-white p-4 shadow-card">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
               return (
@@ -90,11 +90,9 @@ export default function FAQs() {
                       {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                     </span>
                   </button>
-                  {isOpen ? (
-                    <div className="pb-5">
-                      <p className="text-[14px] leading-relaxed text-steel">{faq.a}</p>
-                    </div>
-                  ) : null}
+                  <div className={`grid transition-all duration-200 ${isOpen ? "grid-rows-[1fr] pb-5 opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                    <p className="overflow-hidden text-[14px] leading-relaxed text-steel">{faq.a}</p>
+                  </div>
                 </div>
               );
             })}

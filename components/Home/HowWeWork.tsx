@@ -112,9 +112,9 @@ export default function HowWeWork() {
             {industries.map((industry) => (
               <div
                 key={industry.name}
-                className="flex min-h-32 flex-col items-center justify-center gap-3 rounded-[6px] border border-white/12 bg-white/[0.06] p-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]"
+                className="light-card group flex min-h-32 flex-col items-center justify-center gap-3 rounded-[6px] border border-white/12 bg-white/[0.06] p-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-200 hover:-translate-y-1 hover:border-accent/55 hover:bg-white/[0.1] hover:shadow-[0_18px_36px_rgba(0,0,0,0.18)]"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-primary-1 shadow-[0_10px_24px_rgba(42,167,223,0.2)]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-primary-1 shadow-[0_10px_24px_rgba(42,167,223,0.2)] transition-transform duration-200 group-hover:scale-105">
                   <industry.icon className="h-6 w-6 stroke-[1.8]" />
                 </div>
                 <span className="text-[13px] font-extrabold uppercase leading-tight text-white">
@@ -131,7 +131,7 @@ export default function HowWeWork() {
               { label: "Vision", icon: Target, text: "To become one of the world's most trusted engineering companies delivering innovative manufacturing, inspection, industrial services, and engineering solutions." },
               { label: "Mission", icon: ShieldCheck, text: "To deliver reliable, safe, and cost-effective engineering solutions through technical expertise, innovation, quality management, and continuous improvement." },
             ].map((item) => (
-              <article key={item.label} className="rounded-[8px] border border-bordercol bg-white p-8 shadow-card">
+              <article key={item.label} className="light-card group rounded-[8px] border border-bordercol bg-white p-8 shadow-card transition-all duration-200 hover:-translate-y-1 hover:border-primary-2/35 hover:shadow-lift">
                 <div className="flex h-13 w-13 items-center justify-center rounded-full bg-linear-to-br from-[#020815] via-navy to-primary-1 text-white shadow-[0_12px_24px_rgba(7,21,44,0.28)]">
                   <item.icon className="h-7 w-7" />
                 </div>
@@ -140,7 +140,7 @@ export default function HowWeWork() {
               </article>
             ))}
 
-            <article className="rounded-[8px] border border-bordercol bg-white p-8 shadow-card md:col-span-2">
+            <article className="light-card group rounded-[8px] border border-bordercol bg-white p-8 shadow-card transition-all duration-200 hover:-translate-y-1 hover:border-primary-2/35 hover:shadow-lift md:col-span-2">
               <div className="flex h-13 w-13 items-center justify-center rounded-full bg-linear-to-br from-[#020815] via-navy to-primary-1 text-white shadow-[0_12px_24px_rgba(7,21,44,0.28)]">
                 <Leaf className="h-7 w-7" />
               </div>

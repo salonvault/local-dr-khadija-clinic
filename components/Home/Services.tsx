@@ -81,7 +81,7 @@ export default function Services() {
           {services.map((service) => (
             <article
               key={service.title}
-              className="overflow-hidden rounded-[4px] border border-bordercol bg-white shadow-card"
+              className="light-card group overflow-hidden rounded-[4px] border border-bordercol bg-white shadow-card transition-transform duration-200 hover:-translate-y-1"
             >
               <div className="relative h-58 overflow-hidden bg-navy">
                 <Image
@@ -89,7 +89,7 @@ export default function Services() {
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-navy/38 to-transparent" />
               </div>
