@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 
 export const BASE_URL = "https://salonvault.online";
 
-const title = "SalonVault | Growth Systems for Salons & Beauty Businesses";
+const title = "SalonVault | Growth Systems for Salons & Fashion Brands";
 const description =
   "SalonVault builds conversion-focused websites, booking systems, chatbots, and custom salon software that help beauty businesses attract more clients and increase bookings.";
-const ogImage = "/assets/og-image.png";
+const ogImage = "/assets/og--image.png";
 
 export const seoMetadata: Metadata = {
   metadataBase: new URL(BASE_URL),

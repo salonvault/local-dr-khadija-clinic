@@ -1,6 +1,6 @@
-import { ArrowUpRight, ChartNoAxesCombined, CheckCircle2, Headphones, LockKeyhole, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, ChartNoAxesCombined, CheckCircle2, Headphones, LockKeyhole, Mail, ShieldCheck } from "lucide-react";
 import Image from "next/image";
-import { FaFacebookF, FaInstagram, FaPinterestP, FaTiktok } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram } from "react-icons/fa6";
 
 const exploreLinks = ["Home", "About Us", "Services", "Our Work", "Pricing", "Blog", "Contact Us"];
 
@@ -49,7 +49,7 @@ function getHref(label: string) {
 
 export default function Footer() {
   return (
-    <footer className=" px-3 pb-4 pt-6 text-[var(--color-foreground)] md:px-5">
+    <footer className=" px-0 pb-2 pt-6 text-[var(--color-foreground)] md:px-5">
       <div className="container">
         <div className="relative overflow-hidden rounded-[16px] border border-[var(--color-bordercol)] bg-[linear-gradient(135deg,#ffffff_0%,#fff9fb_52%,#ffffff_100%)] shadow-[0_12px_36px_rgba(17,17,17,0.045)]">
           <div className="pointer-events-none absolute -right-16 top-14 hidden h-[300px] w-[190px] opacity-35 lg:block">
@@ -77,15 +77,16 @@ export default function Footer() {
 
               <div className="mt-7 flex gap-3 text-[var(--color-primary-1)]">
                 {[
-                  { icon: FaInstagram, label: "Instagram" },
-                  { icon: FaFacebookF, label: "Facebook" },
-                  { icon: FaPinterestP, label: "Pinterest" },
-                  { icon: FaTiktok, label: "TikTok" },
-                ].map(({ icon: Icon, label }) => (
+                  { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/salonvault.web/" },
+                  { icon: FaFacebookF, label: "Facebook", href: "https://www.facebook.com/SaloonVault.web" },
+                  { icon: Mail, label: "Email", href: "mailto:support@salonvault.online" },
+                ].map(({ icon: Icon, label, href }) => (
                   <a
                     key={label}
-                    href="#"
+                    href={href}
                     aria-label={label}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={href.startsWith("http") ? "noreferrer" : undefined}
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-primary-3)] transition-colors hover:bg-[var(--color-primary-1)] hover:text-white"
                   >
                     <Icon className="h-4 w-4" />
@@ -128,30 +129,29 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="label-l1 text-[var(--color-primary-1)]">Stay Updated</h3>
+              <h3 className="label-l1 text-[var(--color-primary-1)]">Start Growing</h3>
               <p className="para-p2 mt-5 max-w-[280px]">
-                Get tips, trends, and strategies to grow your salon business.
+                Ready for a salon website, chatbot, or custom booking system that brings more clients?
               </p>
 
-              <form className="mt-6 flex max-w-[280px] overflow-hidden rounded-[7px] border border-[var(--color-bordercol)] bg-white shadow-[0_10px_24px_rgba(17,17,17,0.04)]">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="para-p3 min-w-0 flex-1 px-4 outline-none placeholder:text-[var(--color-ink-3)]"
-                />
-                <button
-                  type="submit"
-                  aria-label="Subscribe"
-                  className="flex h-12 w-12 shrink-0 items-center justify-center bg-[var(--color-primary-1)] text-white transition-colors hover:bg-[var(--color-primary-2)]"
-                >
-                  <ArrowUpRight className="h-5 w-5" />
-                </button>
-              </form>
+              <a
+                href="#contact"
+                className="mt-6 inline-flex h-11 items-center justify-center gap-2 rounded-[7px] bg-[var(--color-primary-1)] px-5 text-[13px] font-semibold text-white shadow-[0_14px_28px_rgba(232,93,117,0.18)] transition-colors hover:bg-[var(--color-primary-2)]"
+              >
+                Book Free Call
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
 
-              <p className="mt-4 flex items-center gap-2 text-[11px] font-normal text-[var(--color-ink-3)]">
+              <p className="mt-5 flex items-center gap-2 text-[11px] font-normal text-[var(--color-ink-3)]">
                 <CheckCircle2 className="h-3.5 w-3.5 text-[var(--color-primary-1)]" />
-                No spam. Unsubscribe anytime.
+                Usually replies within 24 hours.
               </p>
+              <a
+                href="mailto:support@salonvault.online"
+                className="mt-3 inline-flex text-[12px] font-normal text-[var(--color-ink-2)] transition-colors hover:text-[var(--color-primary-1)]"
+              >
+                support@salonvault.online
+              </a>
             </div>
           </div>
 
