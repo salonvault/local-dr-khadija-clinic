@@ -1,53 +1,82 @@
 import type { Metadata } from "next";
 
-export const BASE_URL = "https://www.novacoregroup.com";
+export const BASE_URL = "https://salonvault.online";
+
+const title = "SalonVault | Growth Systems for Salons & Beauty Businesses";
+const description =
+  "SalonVault builds conversion-focused websites, booking systems, chatbots, and custom salon software that help beauty businesses attract more clients and increase bookings.";
+const ogImage = "/assets/og-image.png";
 
 export const seoMetadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "SalonVault | Growth Systems for Saloons",
+    default: title,
     template: "%s | SalonVault",
   },
-  description:
-    "SalonVault creates elegant, conversion-focused growth systems for salons and beauty businesses that want more bookings, trust, and sales.",
+  description,
+  applicationName: "SalonVault",
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
+  category: "Web Design Agency",
   keywords: [
     "SalonVault",
+    "salon growth systems",
+    "growth systems for salons",
+    "growth systems for saloons",
     "salon web design",
+    "salon website design",
     "beauty salon websites",
     "hair salon website design",
     "spa website design",
+    "salon chatbot",
+    "salon booking system",
+    "salon management software",
     "beauty business marketing",
-    "salon booking website",
   ],
   authors: [{ name: "SalonVault" }],
   creator: "SalonVault",
+  publisher: "SalonVault",
+  alternates: {
+    canonical: BASE_URL,
+  },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
+  ...(process.env.GOOGLE_SITE_VERIFICATION
+    ? {
+        verification: {
+          google: process.env.GOOGLE_SITE_VERIFICATION,
+        },
+      }
+    : {}),
   openGraph: {
     type: "website",
     locale: "en_US",
     url: BASE_URL,
     siteName: "SalonVault",
-    title: "SalonVault | Growth Systems for Saloons",
-    description:
-      "Elegant, conversion-focused growth systems for salons and beauty businesses.",
+    title,
+    description,
     images: [
       {
-        url: "/assets/salon-hero.png",
-        width: 1200,
-        height: 630,
-        alt: "SalonVault growth systems for salons",
+        url: ogImage,
+        width: 1813,
+        height: 859,
+        alt: "SalonVault growth systems for salon and beauty businesses",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SalonVault | Growth Systems for Saloons",
-    description:
-      "Elegant, conversion-focused growth systems for salons and beauty businesses.",
-    images: ["/assets/salon-hero.png"],
+    title,
+    description,
+    images: [ogImage],
   },
 };

@@ -6,6 +6,7 @@ import {
   Menu,
   Sparkles,
 } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -67,12 +68,16 @@ export default function Header() {
       <div className="container flex min-h-18 items-center justify-between gap-4 lg:min-h-20">
         <a href="#" className="flex items-center gap-3" aria-label="SalonVault home">
           <div className="leading-none">
-            <div className="brand-logo text-[var(--color-foreground)]">
-              Salon<span className="text-[var(--color-primary-1)]">Vault</span>
-            </div>
-            <div className="brand-tagline mt-1">
-              Growth Systems for Saloons.
-            </div>
+            <Image
+              src="/assets/logo_3.png"
+              alt="SalonVault"
+              width={620}
+              height={402}
+              priority
+              unoptimized
+              className="h-14 w-auto object-contain md:h-15"
+            />
+           
           </div>
         </a>
 
@@ -105,22 +110,20 @@ export default function Header() {
               <span className="sr-only">Open menu</span>
             </SheetTrigger>
           <SheetContent className="bg-[linear-gradient(160deg,#ffffff_0%,#fff8fa_62%,#ffffff_100%)] p-5">
-            <div className="mt-2 rounded-[12px] border border-[var(--color-bordercol)] bg-white/80 p-4 shadow-[0_10px_24px_rgba(17,17,17,0.04)]">
+            {/* <div className="mt-2 rounded-[12px] border border-[var(--color-bordercol)] bg-white/80 p-4 shadow-[0_10px_24px_rgba(17,17,17,0.04)]"> */}
               <div className="leading-none">
-                <div className="brand-logo text-[var(--color-foreground)]">
-                  Salon<span className="text-[var(--color-primary-1)]">Vault</span>
-                </div>
-                <div className="brand-tagline mt-1">
-                  Growth Systems for Saloons.
-                </div>
+                <Image
+                  src="/assets/logo_3.png"
+                  alt="SalonVault"
+                  width={620}
+                  height={402}
+                  className="h-14 w-auto object-contain"
+                />
+                
               </div>
-            </div>
+            {/* </div> */}
 
-            <div className="mt-5 flex items-center gap-2 rounded-full bg-[var(--color-primary-3)] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.06em] text-[var(--color-primary-1)]">
-              <Sparkles className="h-3.5 w-3.5" />
-              Salon Growth Menu
-            </div>
-
+          
             <nav className="mt-5 grid gap-2 text-[14px] font-normal text-[var(--color-foreground)]">
               {navItems.map((item) => (
                 <SheetClose asChild key={item.label}>

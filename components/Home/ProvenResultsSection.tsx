@@ -30,7 +30,7 @@ const results = [
 
 export default function ProvenResultsSection() {
   return (
-    <section id="proven-results" className="bg-white py-3 md:py-4">
+    <section id="proven-results" className=" py-3 md:py-4">
       <div className="container">
         <div className="rounded-[12px] border border-[var(--color-bordercol)] bg-white px-5 py-5 shadow-[0_10px_28px_rgba(17,17,17,0.035)]">
           <div className="mx-auto max-w-[520px] text-center">

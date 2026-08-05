@@ -82,9 +82,9 @@ function DecorativeDots({ className }: { className: string }) {
 
 export default function RealResultsSection() {
   return (
-    <section id="real-results" className="bg-white py-6 md:py-8 lg:py-8">
+    <section id="real-results" className=" py-6 md:py-8 lg:py-8">
       <div className="container">
-        <div className="relative overflow-hidden rounded-[18px] border border-[var(--color-blush-2)] bg-[linear-gradient(110deg,rgba(255,247,248,0.96)_0%,rgba(255,239,243,0.82)_50%,rgba(255,247,249,0.98)_100%)] px-5 py-6 shadow-[0_16px_42px_rgba(232,93,117,0.07)] backdrop-blur-xl md:px-7 lg:min-h-0 lg:px-7 lg:py-7">
+        <div className="relative overflow-hidden rounded-[18px] border border-[var(--color-blush-2)] bg-white px-5 py-6 shadow-[0_16px_42px_rgba(232,93,117,0.07)] backdrop-blur-xl md:px-7 lg:min-h-0 lg:px-7 lg:py-7">
           <div className="pointer-events-none absolute -left-24 bottom-0 h-56 w-56 rounded-full border border-[var(--color-primary-1)]/10" />
           <div className="pointer-events-none absolute left-[23%] top-[53%] h-28 w-28 rounded-full bg-[var(--color-primary-1)]/10 blur-xl" />
           <DecorativeDots className="bottom-6 left-6" />

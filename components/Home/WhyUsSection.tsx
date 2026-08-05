@@ -101,7 +101,7 @@ const reasons = [
 
 export default function WhyUsSection() {
   return (
-    <section id="why-us" className="bg-white py-6 md:py-8">
+    <section id="why-us" className=" py-6 md:py-8">
       <div className="container">
         <div className="rounded-[12px] border border-[var(--color-bordercol)] bg-white px-5 py-7 shadow-[0_10px_28px_rgba(17,17,17,0.035)] md:px-8">
           <div className="grid gap-5 md:grid-cols-[1fr_1.15fr] md:items-end">

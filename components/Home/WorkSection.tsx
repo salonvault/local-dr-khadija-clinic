@@ -40,7 +40,7 @@ export default function WorkSection() {
   }, []);
 
   return (
-    <section id="our-work" className="bg-white py-6 md:py-8">
+    <section id="our-work" className=" py-6 md:py-8">
       <div className="container">
         <div className="rounded-[12px] border border-[var(--color-bordercol)] bg-white px-5 py-7 shadow-[0_10px_28px_rgba(17,17,17,0.035)] md:px-8">
           <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">

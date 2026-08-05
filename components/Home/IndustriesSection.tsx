@@ -50,7 +50,7 @@ const industries: Industry[] = [
 
 export default function IndustriesSection() {
   return (
-    <section id="industries" className="relative overflow-hidden bg-gradient-to-b from-white via-[var(--color-blush-1)] to-white py-8 md:py-10 lg:py-10">
+    <section id="industries" className="relative overflow-hidden  to-white py-8 md:py-10 lg:py-10">
       <div className="container">
         <div className="mx-auto max-w-[640px] text-center">
           <p className="label-l1 text-[var(--color-primary-1)]">Industries We Serve</p>

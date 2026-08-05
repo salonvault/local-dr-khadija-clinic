@@ -1,4 +1,5 @@
 import { ArrowUpRight, ChartNoAxesCombined, CheckCircle2, Headphones, LockKeyhole, ShieldCheck } from "lucide-react";
+import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaPinterestP, FaTiktok } from "react-icons/fa6";
 
 const exploreLinks = ["Home", "About Us", "Services", "Our Work", "Pricing", "Blog", "Contact Us"];
@@ -48,7 +49,7 @@ function getHref(label: string) {
 
 export default function Footer() {
   return (
-    <footer className="bg-white px-3 pb-4 pt-6 text-[var(--color-foreground)] md:px-5">
+    <footer className=" px-3 pb-4 pt-6 text-[var(--color-foreground)] md:px-5">
       <div className="container">
         <div className="relative overflow-hidden rounded-[16px] border border-[var(--color-bordercol)] bg-[linear-gradient(135deg,#ffffff_0%,#fff9fb_52%,#ffffff_100%)] shadow-[0_12px_36px_rgba(17,17,17,0.045)]">
           <div className="pointer-events-none absolute -right-16 top-14 hidden h-[300px] w-[190px] opacity-35 lg:block">
@@ -62,12 +63,15 @@ export default function Footer() {
           <div className="relative z-10 grid gap-8 px-5 py-8 md:px-8 lg:grid-cols-[1.35fr_0.7fr_1fr_1fr_1.2fr] lg:gap-10 lg:py-10">
             <div>
               <div className="leading-none">
-                <div className="brand-logo">
-                  Salon<span className="text-[var(--color-primary-1)]">Vault</span>
-                </div>
-                <div className="brand-tagline mt-1">Growth Systems for Saloons.</div>
+                <Image
+                  src="/assets/logo_3.png"
+                  alt="SalonVault"
+                  width={620}
+                  height={402}
+                  className="h-14 w-auto object-contain"
+                />
               </div>
-              <p className="para-p2 mt-5 max-w-[280px]">
+              <p className="para-p2 mt-3 max-w-[280px]">
                 We design high-converting growth systems for salons and beauty businesses that attract clients, build trust, and drive real growth.
               </p>
 

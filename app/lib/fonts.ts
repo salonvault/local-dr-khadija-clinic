@@ -1,4 +1,4 @@
-import { Inter, Bitter, DM_Mono} from "next/font/google";
+import { Inter, Bitter, DM_Mono,Bricolage_Grotesque ,Cormorant} from "next/font/google";
 
 export const body_font = Inter({
   variable: "--font-body",
@@ -12,7 +12,7 @@ export const dm_mono = DM_Mono({
   weight: ["400", "500"],
 });
 
-export const heading_font = Bitter  ({
+export const heading_font = Bricolage_Grotesque({
   variable: "--font-heading",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],

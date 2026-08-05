@@ -56,12 +56,12 @@ function ProcessArrow() {
 
 export default function OurProcessesSection() {
   return (
-    <section id="our-processes" className="bg-white py-6 md:py-8">
+    <section id="our-processes" className=" py-6 md:py-8">
       <div className="container">
         <div className="rounded-[14px] border border-[var(--color-bordercol)] bg-white px-5 py-7 shadow-[0_12px_36px_rgba(17,17,17,0.035)] md:px-8 lg:px-9 lg:py-9">
-          <div className="max-w-[420px]">
+          <div className="max-w-[620px]">
             <p className="label-l1 font-heading! text-[var(--color-primary-1)]">Our Process</p>
-            <h2 className="heading-h2 mt-4 max-w-[360px]">
+            <h2 className="heading-h2 mt-4 ">
               How We Turn Clicks Into <span className="text-[var(--color-primary-1)]">Booked Clients</span>
             </h2>
             <p className="para-p3 mt-4 max-w-[300px]">

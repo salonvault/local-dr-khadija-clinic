@@ -91,7 +91,7 @@ export default function FAQs() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="bg-white py-6 md:py-8">
+    <section id="faq" className=" py-6 md:py-8">
       <div className="container">
         <div className="rounded-[12px] border border-[var(--color-bordercol)] bg-[linear-gradient(135deg,#ffffff_0%,#fff8fa_50%,#ffffff_100%)] px-5 py-7 shadow-[0_10px_28px_rgba(17,17,17,0.035)] md:px-8">
           <div className="mx-auto max-w-[680px] text-center">

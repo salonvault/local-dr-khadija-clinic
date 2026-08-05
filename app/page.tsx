@@ -28,9 +28,9 @@ function page() {
         <WorkSection />
         <WhyUsSection />
         <PricingSection />
-        <FAQs />
-        <CTASection />
         <TestimonialSection />
+        <CTASection />
+        <FAQs />
       </main>
       <Footer />
       <WhatsAppFloat />
