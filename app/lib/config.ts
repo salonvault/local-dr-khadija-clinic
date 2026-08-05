@@ -5,23 +5,22 @@ export const BASE_URL = "https://www.novacoregroup.com";
 export const seoMetadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "NovaCore Engineering Group | Engineering Beyond Standards",
-    template: "%s | NovaCore Engineering Group",
+    default: "SalonVault | Growth Systems for Saloons",
+    template: "%s | SalonVault",
   },
   description:
-    "NovaCore Engineering Group delivers boiler manufacturing, boiler and turbine inspection, pressure vessel solutions, EPC services, industrial fabrication, and engineering consultancy.",
+    "SalonVault creates elegant, conversion-focused growth systems for salons and beauty businesses that want more bookings, trust, and sales.",
   keywords: [
-    "NovaCore Engineering Group",
-    "boiler inspection",
-    "boiler manufacturing",
-    "turbine inspection",
-    "pressure vessel manufacturing",
-    "industrial fabrication",
-    "EPC solutions",
-    "engineering consultancy",
+    "SalonVault",
+    "salon web design",
+    "beauty salon websites",
+    "hair salon website design",
+    "spa website design",
+    "beauty business marketing",
+    "salon booking website",
   ],
-  authors: [{ name: "NovaCore Engineering Group" }],
-  creator: "NovaCore Engineering Group",
+  authors: [{ name: "SalonVault" }],
+  creator: "SalonVault",
   robots: {
     index: true,
     follow: true,
@@ -31,24 +30,24 @@ export const seoMetadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: BASE_URL,
-    siteName: "NovaCore Engineering Group",
-    title: "NovaCore Engineering Group | Engineering Beyond Standards",
+    siteName: "SalonVault",
+    title: "SalonVault | Growth Systems for Saloons",
     description:
-      "Engineering solutions for boiler manufacturing, inspection, industrial services, EPC projects, and consultancy.",
+      "Elegant, conversion-focused growth systems for salons and beauty businesses.",
     images: [
       {
-        url: "/assets/og-image.png",
+        url: "/assets/salon-hero.png",
         width: 1200,
         height: 630,
-        alt: "NovaCore Engineering Group",
+        alt: "SalonVault growth systems for salons",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "NovaCore Engineering Group | Engineering Beyond Standards",
+    title: "SalonVault | Growth Systems for Saloons",
     description:
-      "Engineering solutions for boiler manufacturing, inspection, industrial services, EPC projects, and consultancy.",
-    images: ["/assets/og-image.png"],
+      "Elegant, conversion-focused growth systems for salons and beauty businesses.",
+    images: ["/assets/salon-hero.png"],
   },
 };

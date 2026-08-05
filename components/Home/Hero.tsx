@@ -1,94 +1,81 @@
 import Image from "next/image";
-import { ArrowRight, Award, Clock3, Cog, ShieldCheck, UsersRound } from "lucide-react";
-
-const strengths = [
-  {
-    icon: Cog,
-    title: "Engineering",
-    titleSecondLine: "Excellence",
-    text: "Delivering solutions with precision",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Commitment to",
-    titleSecondLine: "Safety",
-    text: "Safety is our priority in every project",
-  },
-  {
-    icon: UsersRound,
-    title: "Experienced",
-    titleSecondLine: "Team",
-    text: "Skilled professionals with industry expertise",
-  },
-  {
-    icon: Award,
-    title: "Quality",
-    titleSecondLine: "Assurance",
-    text: "International standards and reliable delivery",
-  },
-  {
-    icon: Clock3,
-    title: "Timely",
-    titleSecondLine: "Delivery",
-    text: "On-time project execution, every time",
-  },
-];
+import { ArrowRight, Phone } from "lucide-react";
+import {  FiTrendingUp } from "react-icons/fi";
+import { VscWorkspaceTrusted } from "react-icons/vsc";
 
 export default function Hero() {
   return (
-    <section className="bg-navy text-white">
-      <div className="relative overflow-hidden">
-        <Image
-          src="/assets/hero_1.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-linear-to-r from-navy via-navy/90 to-transparent md:via-navy/30" />
+    <section className="hero-cylinders bg-[var(--color-background)]">
+      <div className="container py-8 lg:py-12">
+        <div className="hero-content grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+          <div className="max-w-[680px]">
+            <div className="label-l1 inline-block rounded-full bg-accent/15 px-4 py-1.5 text-[var(--color-primary-1)]">
+              For Salons Ready to Grow
+            </div>
 
-        <div className="container relative z-10 flex min-h-[400px] items-center py-14 lg:min-h-[410px]">
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-3 text-accent">NovaCore Engineering Group</p>
-            <h1 className="heading-xl max-w-3xl uppercase text-white">
-              Engineering Beyond Standards
+            <h1 className="heading-h1 mt-4 md:mt-6">
+              <span className="block lg:whitespace-nowrap font-normal!">Strategic Salon Websites</span>
+              <br className="hidden md:block" />
+              <span className="block text-[var(--color-primary-1)] ">That Bring You More Clients.</span>
             </h1>
-            <p className="body-lg mt-6 max-w-xl text-white/84">
-              Delivering innovative engineering solutions in manufacturing, inspection,
-              industrial services, and EPC projects with a commitment to quality, safety,
-              and global standards.
+
+            <p className="para-p1 mt-4 md:mt-6 max-w-[560px]">
+              We build conversion-focused websites for salons that attract the right clients, build instant trust, and turn visitors into booked appointments consistently.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a href="#services" className="navy-button">
-                Our Services
-                <ArrowRight className="h-4 w-4" />
+
+            <div className="mt-8 flex flex-row  gap-4">
+              <a href="#our-work" className="navy-button min-h-12 min-w-[166px]">
+                See Real Results
+                <ArrowRight className="h-4 w-4 hidden md:flex" />
               </a>
-              <a href="#contact" className="outline-button">
-                Request a Quote
-                <ArrowRight className="h-4 w-4" />
+              <a href="#contact" className="outline-button min-h-12 min-w-[178px]">
+                <span className="hidden md:flex">Book</span> Free Strategy Call
+                <Phone className="h-4 w-4 hidden md:flex" />
               </a>
+            </div>
+
+            <div className="mt-10 flex flex-col md:flex-row  gap-2 md:gap-4">
+              {[
+                [VscWorkspaceTrusted , "Convert Visitors Into Bookings", "More Bookings. More Revenue"],
+                [FiTrendingUp, "Build Instant Trust Online", "Fill Empty Appointment Slots"],
+              ].map(([Icon, title, text]) => (
+                <div className="flex items-start gap-3" key={title as string}>
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary-3)]">
+                    <Icon className="h-5 w-5 text-[var(--color-primary-1)]" />
+                  </div>
+                  <div>
+                    <div className="text-[13px] font-extrabold">{title as string}</div>
+                    <div className="text-[13px] text-[var(--color-steel)]">{text as string}</div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="relative bg-navy">
-        <div className="container grid grid-cols-1 divide-y divide-white/14 py-6 text-white sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-5">
-          {strengths.map((item) => (
-            <div key={item.title} className="flex items-start gap-4 px-2 py-4 lg:px-6">
-              <item.icon className="mt-1 h-10 w-10 shrink-0 stroke-[1.6]" />
-              <div>
-                <h3 className="text-[13px] font-extrabold uppercase leading-tight">
-                  {item.title}
-                  <br className="hidden lg:block" />
-                  <span className="lg:hidden"> </span>
-                  {item.titleSecondLine}
-                </h3>
-                <p className="mt-2 text-[12px] leading-relaxed text-white/72">{item.text}</p>
+          <div className="hero-right">
+            <div className="hero-browser w-full max-w-[620px] bg-white">
+              <div className="flex h-8 items-center gap-1.5 bg-white px-4">
+                <span className="h-2 w-2 rounded-full bg-[#ece8e6]" />
+                <span className="h-2 w-2 rounded-full bg-[#ece8e6]" />
+                <span className="h-2 w-2 rounded-full bg-[#ece8e6]" />
+              </div>
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <Image src="/assets/hero-1.png" alt="Luxury salon website tablet preview" fill sizes="(min-width: 1024px) 620px, 100vw" className="object-cover object-top" priority />
               </div>
             </div>
-          ))}
+
+            <div className="hero-mobile hidden bg-white p-[3px] md:block">
+              <div className="h-[280px] lg:h-[330px] overflow-hidden rounded-[8px] border border-[#eee8e5] bg-white">
+                <div className="flex h-6 items-center justify-center gap-2 bg-white">
+                  <span className="h-1.5 w-8 rounded-full bg-[#e5e0df]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#e5e0df]" />
+                </div>
+                <div className="h-[254px] overflow-hidden border-t border-[#eee8e5] lg:h-[304px]">
+                  <Image src="/assets/hero-2.png" alt="Luxury salon website mobile preview" width={360} height={520} sizes="180px" className="h-full w-full object-cover object-top" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

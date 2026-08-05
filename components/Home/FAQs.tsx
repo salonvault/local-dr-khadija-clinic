@@ -1,101 +1,137 @@
 "use client";
 
-import { Mail, MapPin, Minus, Phone, Plus, Send } from "lucide-react";
-import React from "react";
+import { Minus, Plus } from "lucide-react";
+import { useState } from "react";
 
 const faqs = [
   {
-    q: "Which engineering services does NovaCore provide?",
-    a: "NovaCore provides boiler manufacturing, boiler inspection and certification, pressure vessel manufacturing, heat exchangers, industrial fabrication, EPC solutions, consultancy, maintenance, shutdown support, and third-party inspection.",
+    question: "What is included in the $300 website package?",
+    answer: "It includes a custom responsive salon website, service sections, booking-focused calls to action, contact forms, basic local SEO, and mobile optimization.",
   },
   {
-    q: "Do you support boiler and turbine inspection work?",
-    a: "Yes. Inspection services are central to NovaCore's offering, including boiler compliance verification, certification support, condition assessment, and inspection planning for critical rotating and pressure equipment.",
+    question: "What makes the $500 chatbot package different?",
+    answer: "The $500 package includes the full website build plus a custom chatbot designed to answer common questions, capture leads, and guide clients toward booking.",
   },
   {
-    q: "Which industries can work with NovaCore?",
-    a: "We serve power plants, textile, sugar, chemical, paper, food processing, pharmaceutical, oil and gas, cement, steel, and broader manufacturing industries.",
+    question: "Can you connect my booking system?",
+    answer: "Yes. We can connect common booking tools, calendar links, contact forms, WhatsApp, and other appointment flows based on how your salon already works.",
   },
   {
-    q: "Can NovaCore handle EPC and shutdown projects?",
-    a: "Yes. NovaCore supports end-to-end EPC execution and planned industrial shutdown services, including engineering, procurement, fabrication, inspection, maintenance, and commissioning support.",
+    question: "Do you only work with beauty salons?",
+    answer: "SalonVault is focused on beauty businesses, including hair salons, nail studios, skin care clinics, barbershops, lash studios, and similar service brands.",
+  },
+  {
+    question: "How long does a website take?",
+    answer: "Most standard salon websites can be designed and launched quickly once the content, brand direction, and required booking details are ready.",
+  },
+  {
+    question: "Can you write the website copy too?",
+    answer: "Yes. We can shape the messaging, service copy, calls to action, and trust sections so the site feels premium and sales-focused.",
+  },
+  {
+    question: "Will the website work on mobile?",
+    answer: "Yes. Every SalonVault website is designed mobile-first so clients can browse services, trust the business, and book easily from their phone.",
+  },
+  {
+    question: "What is the custom software option?",
+    answer: "It is a custom salon management solution for businesses that need dashboards, staff tools, client records, booking workflows, or other operational software.",
+  },
+  {
+    question: "Do you provide support after launch?",
+    answer: "Yes. We can help with updates, improvements, chatbot adjustments, technical fixes, and growth-focused changes after the website goes live.",
+  },
+  {
+    question: "How do we get started?",
+    answer: "Book a free call, share your salon goals, and we will recommend the right package based on your services, booking process, and growth needs.",
   },
 ];
 
+function FAQItem({
+  question,
+  answer,
+  isOpen,
+  onToggle,
+}: {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <article className="overflow-hidden rounded-[10px] border border-[var(--color-bordercol)] bg-white shadow-[0_10px_26px_rgba(17,17,17,0.04)]">
+      <button
+        type="button"
+        onClick={onToggle}
+        className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left transition-colors hover:bg-primary-1/5"
+        aria-expanded={isOpen}
+      >
+        <span className="heading-h5 font-bold">{question}</span>
+        <span
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-colors ${
+            isOpen
+              ? "border-[var(--color-primary-1)] bg-[var(--color-primary-1)] text-white"
+              : "border-[var(--color-blush-2)] bg-[var(--color-primary-3)] text-[var(--color-primary-1)]"
+          }`}
+        >
+          {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+        </span>
+      </button>
+
+      <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+        <div className="overflow-hidden">
+          <div className="mx-4 h-px bg-[var(--color-bordercol)]" />
+          <p className="para-p3 px-4 pb-4 pt-3">{answer}</p>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export default function FAQs() {
-  const [openIndex, setOpenIndex] = React.useState(0);
+  const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="contact" className="section-pad bg-panel">
-      <div className="container grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-        <div>
-          <p className="eyebrow">Contact</p>
-          <h2 className="heading-lg mt-3 text-navy">Request a Quote for Your Next Industrial Project</h2>
-          <p className="body-lg mt-5 text-steel">
-            NovaCore Engineering Group serves industries in Pakistan and worldwide
-            with dependable manufacturing, inspection, maintenance, and engineering services.
-          </p>
-
-          <div className="mt-8 space-y-4 text-[14px] font-semibold text-navy">
-            <a href="mailto:info@novacoregroup.com" className="flex items-center gap-3">
-              <Mail className="h-5 w-5 text-primary-2" />
-              info@novacoregroup.com
-            </a>
-            <a href="tel:+923434101295" className="flex items-center gap-3">
-              <Phone className="h-5 w-5 text-primary-2" />
-              +92 343 4101295
-            </a>
-            <span className="flex items-center gap-3">
-              <MapPin className="h-5 w-5 text-primary-2" />
-              Lahore, Pakistan - Serving Industries Worldwide
-            </span>
-          </div>
-
-          <div className="mt-10 rounded-[6px] bg-navy p-7 text-white">
-            <h3 className="text-[20px] font-extrabold">Engineering Beyond Standards</h3>
-            <p className="mt-3 text-[14px] leading-relaxed text-white/72">
-              Reliable, safe, and cost-effective engineering through technical
-              expertise, innovation, quality management, and continuous improvement.
+    <section id="faq" className="bg-white py-6 md:py-8">
+      <div className="container">
+        <div className="rounded-[12px] border border-[var(--color-bordercol)] bg-[linear-gradient(135deg,#ffffff_0%,#fff8fa_50%,#ffffff_100%)] px-5 py-7 shadow-[0_10px_28px_rgba(17,17,17,0.035)] md:px-8">
+          <div className="mx-auto max-w-[680px] text-center">
+            <p className="label-l1 text-[var(--color-primary-1)]">FAQ</p>
+            <h2 className="heading-h2 mt-3">
+              Questions Salon Owners <span className="text-[var(--color-primary-1)]">Ask Before Booking</span>
+            </h2>
+            <p className="para-p2 mx-auto mt-3 max-w-[540px]">
+              Clear answers about websites, chatbots, booking systems, and custom salon software.
             </p>
           </div>
-        </div>
 
-        <div className="grid gap-6">
-          <form className="light-card rounded-[6px] bg-white p-6 shadow-card md:p-8">
-            <div className="grid gap-4 md:grid-cols-2">
-              <input className="h-12 rounded-[4px] border border-bordercol px-4 text-[14px] outline-none focus:border-primary-2" placeholder="Your Name" />
-              <input className="h-12 rounded-[4px] border border-bordercol px-4 text-[14px] outline-none focus:border-primary-2" placeholder="Company" />
-              <input className="h-12 rounded-[4px] border border-bordercol px-4 text-[14px] outline-none focus:border-primary-2" placeholder="Email" type="email" />
-              <input className="h-12 rounded-[4px] border border-bordercol px-4 text-[14px] outline-none focus:border-primary-2" placeholder="Phone" />
+          <div className="mt-7 grid gap-3 lg:grid-cols-2">
+            <div className="grid content-start gap-3">
+              {faqs.slice(0, 5).map((faq, index) => (
+                <FAQItem
+                  key={faq.question}
+                  question={faq.question}
+                  answer={faq.answer}
+                  isOpen={openIndex === index}
+                  onToggle={() => setOpenIndex(openIndex === index ? -1 : index)}
+                />
+              ))}
             </div>
-            <textarea className="mt-4 min-h-32 w-full rounded-[4px] border border-bordercol p-4 text-[14px] outline-none focus:border-primary-2" placeholder="Tell us about your boiler, turbine, inspection, EPC, or fabrication requirement" />
-            <button type="button" className="navy-button mt-4 w-full md:w-auto">
-              Send Request
-              <Send className="h-4 w-4" />
-            </button>
-          </form>
 
-          <div className="light-card rounded-[6px] bg-white p-4 shadow-card">
-            {faqs.map((faq, index) => {
-              const isOpen = openIndex === index;
-              return (
-                <div key={faq.q} className="border-b border-bordercol last:border-b-0">
-                  <button
-                    type="button"
-                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                    className="flex w-full items-center justify-between gap-4 py-5 text-left text-[15px] font-extrabold text-navy"
-                  >
-                    {faq.q}
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-panel text-primary-2">
-                      {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
-                    </span>
-                  </button>
-                  <div className={`grid transition-all duration-200 ${isOpen ? "grid-rows-[1fr] pb-5 opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-                    <p className="overflow-hidden text-[14px] leading-relaxed text-steel">{faq.a}</p>
-                  </div>
-                </div>
-              );
-            })}
+            <div className="grid content-start gap-3">
+              {faqs.slice(5).map((faq, index) => {
+                const actualIndex = index + 5;
+
+                return (
+                  <FAQItem
+                    key={faq.question}
+                    question={faq.question}
+                    answer={faq.answer}
+                    isOpen={openIndex === actualIndex}
+                    onToggle={() => setOpenIndex(openIndex === actualIndex ? -1 : actualIndex)}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
