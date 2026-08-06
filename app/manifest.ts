@@ -2,17 +2,17 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "SalonVault",
-    short_name: "SalonVault",
-    description: "Growth systems for salons and beauty businesses.",
+    name: "Atelier Hair",
+    short_name: "Atelier Hair",
+    description: "Premium hair extension and color specialists.",
     start_url: "/",
     scope: "/",
     display: "standalone",
-    background_color: "#ffffff",
-    theme_color: "#E85D75",
+    background_color: "#F8F3F0",
+    theme_color: "#A45756",
     icons: [
       {
-        src: "/assets/logo_3.png",
+        src: "/assets/hero_girl.png",
         sizes: "512x512",
         type: "image/png",
       },

@@ -1,41 +1,36 @@
 import type { Metadata } from "next";
 
-export const BASE_URL = "https://salonvault.online";
+export const BASE_URL = "https://atelier-hair.vercel.app";
 
-const title = "SalonVault | Growth Systems for Salons & Fashion Brands";
+const title = "Atelier Hair | Premium Hair Extension & Color Specialists";
 const description =
-  "SalonVault builds conversion-focused websites, booking systems, chatbots, and custom salon software that help beauty businesses attract more clients and increase bookings.";
-const ogImage = "/assets/og--image.png";
+  "Atelier Hair is a warm, editorial salon experience specializing in premium extensions, balayage, dimensional color, and bridal styling.";
+const ogImage = "/assets/hero_girl.png";
 
 export const seoMetadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     default: title,
-    template: "%s | SalonVault",
+    template: "%s | Atelier Hair",
   },
   description,
-  applicationName: "SalonVault",
+  applicationName: "Atelier Hair",
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
-  category: "Web Design Agency",
+  category: "Hair Salon",
   keywords: [
-    "SalonVault",
-    "salon growth systems",
-    "growth systems for salons",
-    "growth systems for saloons",
-    "salon web design",
-    "salon website design",
-    "beauty salon websites",
-    "hair salon website design",
-    "spa website design",
-    "salon chatbot",
-    "salon booking system",
-    "salon management software",
-    "beauty business marketing",
+    "Atelier Hair",
+    "premium hair extensions",
+    "hair extension salon",
+    "balayage salon",
+    "luxury hair color",
+    "bridal hair styling",
+    "dimensional hair color",
+    "editorial hair salon",
   ],
-  authors: [{ name: "SalonVault" }],
-  creator: "SalonVault",
-  publisher: "SalonVault",
+  authors: [{ name: "Atelier Hair" }],
+  creator: "Atelier Hair",
+  publisher: "Atelier Hair",
   alternates: {
     canonical: BASE_URL,
   },
@@ -61,15 +56,15 @@ export const seoMetadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: BASE_URL,
-    siteName: "SalonVault",
+    siteName: "Atelier Hair",
     title,
     description,
     images: [
       {
         url: ogImage,
-        width: 1813,
-        height: 859,
-        alt: "SalonVault growth systems for salon and beauty businesses",
+        width: 1536,
+        height: 1024,
+        alt: "Atelier Hair premium extensions and dimensional color",
       },
     ],
   },

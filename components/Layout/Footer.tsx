@@ -1,188 +1,70 @@
-import { ArrowUpRight, ChartNoAxesCombined, CheckCircle2, Headphones, LockKeyhole, Mail, ShieldCheck } from "lucide-react";
-import Image from "next/image";
-import { FaFacebookF, FaInstagram } from "react-icons/fa6";
+import { ArrowUpRight, Mail } from "lucide-react";
 
-const exploreLinks = ["Home", "About Us", "Services", "Our Work", "Pricing", "Blog", "Contact Us"];
-
-const serviceLinks = [
-  "Salon Website Design",
-  "Beauty Website Design",
-  "E-Commerce for Salons",
-  "Booking & Scheduling",
-  "SEO for Salons",
-  "Website Maintenance",
+const links = [
+  { label: "Home", href: "#" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Process", href: "#process" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Testimonials", href: "#testimonials" },
 ];
 
-const industryLinks = ["Hair Salons", "Beauty Salons", "Nail Salons", "Barbershops", "Spa & Wellness", "Lash & Brow Studios"];
-
-const trustItems = [
-  {
-    icon: ShieldCheck,
-    title: "Industry Focused",
-    text: "100% Salon Industry",
-  },
-  {
-    icon: ChartNoAxesCombined,
-    title: "Sales Driven Design",
-    text: "More Bookings. More Revenue.",
-  },
-  {
-    icon: Headphones,
-    title: "Reliable Support",
-    text: "We're Here When You Need Us",
-  },
-  {
-    icon: LockKeyhole,
-    title: "Secure & Fast",
-    text: "Safe, Secure & Lightning Fast",
-  },
-];
-
-function getHref(label: string) {
-  if (label === "Home") return "#";
-  if (label === "About Us") return "#why-us";
-  if (label === "Services") return "#our-processes";
-  if (label === "Contact Us") return "#contact";
-
-  return `#${label.toLowerCase().replaceAll(" & ", "-").replaceAll(" ", "-")}`;
-}
+const services = ["Extensions", "Balayage", "Color correction", "Bridal styling"];
 
 export default function Footer() {
   return (
-    <footer className=" px-0 pb-2 pt-6 text-[var(--color-foreground)] md:px-5">
-      <div className="container">
-        <div className="relative overflow-hidden rounded-[16px] border border-[var(--color-bordercol)] bg-[linear-gradient(135deg,#ffffff_0%,#fff9fb_52%,#ffffff_100%)] shadow-[0_12px_36px_rgba(17,17,17,0.045)]">
-          <div className="pointer-events-none absolute -right-16 top-14 hidden h-[300px] w-[190px] opacity-35 lg:block">
-            <span className="absolute right-8 top-0 h-28 w-9 rotate-[-28deg] rounded-[100%_0_100%_0] bg-[var(--color-primary-1)]/25" />
-            <span className="absolute right-20 top-28 h-24 w-8 rotate-[-55deg] rounded-[100%_0_100%_0] bg-[var(--color-primary-1)]/20" />
-            <span className="absolute right-2 top-44 h-28 w-10 rotate-[-70deg] rounded-[100%_0_100%_0] bg-[var(--color-primary-1)]/20" />
-            <span className="absolute right-28 top-60 h-20 w-8 rotate-[-80deg] rounded-[100%_0_100%_0] bg-[var(--color-primary-1)]/18" />
-            <span className="absolute right-16 top-4 h-[280px] w-px rotate-[18deg] bg-[var(--color-primary-1)]/20" />
+    <footer className="bg-[#f1dfdc] px-4 py-6 text-[var(--color-foreground)] md:px-7">
+      <div className="mx-auto max-w-[1320px] overflow-hidden rounded-[8px] border border-[rgba(164,87,86,0.14)] bg-[#fffaf7]/78 shadow-[0_20px_70px_rgba(62,57,53,0.08)] backdrop-blur-xl">
+        <div className="grid gap-10 px-5 py-8 md:px-8 lg:grid-cols-[1.45fr_0.8fr_0.8fr_1fr] lg:py-10">
+          <div>
+            <a href="#" className="font-heading text-[34px] font-semibold leading-none" aria-label="Atelier Hair home">
+              Atelier Hair
+            </a>
+            <p className="mt-5 max-w-[360px] text-[13px] leading-[1.75] text-[var(--color-ink-2)]">
+              Premium hair extension and color specialists creating soft, dimensional results with a quiet editorial finish.
+            </p>
           </div>
 
-          <div className="relative z-10 grid gap-8 px-5 py-8 md:px-8 lg:grid-cols-[1.35fr_0.7fr_1fr_1fr_1.2fr] lg:gap-10 lg:py-10">
-            <div>
-              <div className="leading-none">
-                <Image
-                  src="/assets/logo_3.png"
-                  alt="SalonVault"
-                  width={620}
-                  height={402}
-                  className="h-14 w-auto object-contain"
-                />
-              </div>
-              <p className="para-p2 mt-3 max-w-[280px]">
-                We design high-converting growth systems for salons and beauty businesses that attract clients, build trust, and drive real growth.
-              </p>
-
-              <div className="mt-7 flex gap-3 text-[var(--color-primary-1)]">
-                {[
-                  { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/salonvault.web/" },
-                  { icon: FaFacebookF, label: "Facebook", href: "https://www.facebook.com/SaloonVault.web" },
-                  { icon: Mail, label: "Email", href: "mailto:support@salonvault.online" },
-                ].map(({ icon: Icon, label, href }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    aria-label={label}
-                    target={href.startsWith("http") ? "_blank" : undefined}
-                    rel={href.startsWith("http") ? "noreferrer" : undefined}
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-primary-3)] transition-colors hover:bg-[var(--color-primary-1)] hover:text-white"
-                  >
-                    <Icon className="h-4 w-4" />
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 className="label-l1 text-[var(--color-primary-1)]">Explore</h3>
-              <nav className="mt-5 grid gap-4 text-[13px] font-normal text-[var(--color-ink-2)]">
-                {exploreLinks.map((link) => (
-                  <a key={link} href={getHref(link)} className="transition-colors hover:text-[var(--color-primary-1)]">
-                    {link}
-                  </a>
-                ))}
-              </nav>
-            </div>
-
-            <div>
-              <h3 className="label-l1 text-[var(--color-primary-1)]">Services</h3>
-              <nav className="mt-5 grid gap-4 text-[13px] font-normal text-[var(--color-ink-2)]">
-                {serviceLinks.map((link) => (
-                  <a key={link} href="#pricing" className="transition-colors hover:text-[var(--color-primary-1)]">
-                    {link}
-                  </a>
-                ))}
-              </nav>
-            </div>
-
-            <div>
-              <h3 className="label-l1 text-[var(--color-primary-1)]">Industries</h3>
-              <nav className="mt-5 grid gap-4 text-[13px] font-normal text-[var(--color-ink-2)]">
-                {industryLinks.map((link) => (
-                  <a key={link} href="#industries" className="transition-colors hover:text-[var(--color-primary-1)]">
-                    {link}
-                  </a>
-                ))}
-              </nav>
-            </div>
-
-            <div>
-              <h3 className="label-l1 text-[var(--color-primary-1)]">Start Growing</h3>
-              <p className="para-p2 mt-5 max-w-[280px]">
-                Ready for a salon website, chatbot, or custom booking system that brings more clients?
-              </p>
-
-              <a
-                href="#contact"
-                className="mt-6 inline-flex h-11 items-center justify-center gap-2 rounded-[7px] bg-[var(--color-primary-1)] px-5 text-[13px] font-semibold text-white shadow-[0_14px_28px_rgba(232,93,117,0.18)] transition-colors hover:bg-[var(--color-primary-2)]"
-              >
-                Book Free Call
-                <ArrowUpRight className="h-4 w-4" />
-              </a>
-
-              <p className="mt-5 flex items-center gap-2 text-[11px] font-normal text-[var(--color-ink-3)]">
-                <CheckCircle2 className="h-3.5 w-3.5 text-[var(--color-primary-1)]" />
-                Usually replies within 24 hours.
-              </p>
-              <a
-                href="mailto:support@salonvault.online"
-                className="mt-3 inline-flex text-[12px] font-normal text-[var(--color-ink-2)] transition-colors hover:text-[var(--color-primary-1)]"
-              >
-                support@salonvault.online
-              </a>
-            </div>
+          <div>
+            <h3 className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-[var(--color-primary-1)]">Explore</h3>
+            <nav className="mt-5 grid gap-3 text-[13px] text-[var(--color-ink-2)]">
+              {links.map((link) => (
+                <a key={link.label} href={link.href} className="transition-colors hover:text-[var(--color-primary-1)]">
+                  {link.label}
+                </a>
+              ))}
+            </nav>
           </div>
 
-          <div className="relative z-10 border-y border-[var(--color-bordercol)] bg-white/55 px-5 py-5 md:px-8">
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {trustItems.map(({ icon: Icon, title, text }) => (
-                <div key={title} className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary-3)] text-[var(--color-primary-1)]">
-                    <Icon className="h-5 w-5" strokeWidth={1.8} />
-                  </div>
-                  <div>
-                    <h4 className="text-[12px] font-semibold text-[var(--color-foreground)]">{title}</h4>
-                    <p className="mt-1 text-[11px] font-normal text-[var(--color-ink-2)]">{text}</p>
-                  </div>
-                </div>
+          <div>
+            <h3 className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-[var(--color-primary-1)]">Specialties</h3>
+            <div className="mt-5 grid gap-3 text-[13px] text-[var(--color-ink-2)]">
+              {services.map((service) => (
+                <span key={service}>{service}</span>
               ))}
             </div>
           </div>
 
-          <div className="relative z-10 flex flex-col gap-4 bg-[var(--color-blush-1)] px-5 py-5 text-[12px] font-normal text-[var(--color-ink-2)] md:flex-row md:items-center md:justify-between md:px-8">
-            <p>(c) 2026 SalonVault. All rights reserved.</p>
-            <div className="flex flex-wrap gap-5">
-              <a href="#" className="hover:text-[var(--color-primary-1)]">Privacy Policy</a>
-              <a href="#" className="hover:text-[var(--color-primary-1)]">Terms & Conditions</a>
-              <a href="#" className="hover:text-[var(--color-primary-1)]">Refund Policy</a>
-            </div>
-            <p>
-              Proudly designed for salons, by{" "}
-              <span className="font-semibold text-[var(--color-primary-1)]">SalonVault.</span>
+          <div>
+            <h3 className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-[var(--color-primary-1)]">Book</h3>
+            <p className="mt-5 max-w-[280px] text-[13px] leading-[1.7] text-[var(--color-ink-2)]">
+              Ready to talk through your hair goals? Start with a calm, consultation-led plan.
             </p>
+            <a
+              href="mailto:hello@atelier-hair.com"
+              className="mt-6 inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-[var(--color-foreground)] px-5 text-[11px] font-extrabold uppercase tracking-[0.08em] text-white transition hover:bg-[var(--color-primary-1)]"
+            >
+              <Mail className="h-4 w-4" />
+              Email Atelier
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
           </div>
+        </div>
+
+        <div className="flex flex-col gap-3 border-t border-[rgba(164,87,86,0.14)] bg-[#f5edec]/70 px-5 py-5 text-[12px] text-[var(--color-ink-2)] md:flex-row md:items-center md:justify-between md:px-8">
+          <p>(c) 2026 Atelier Hair. All rights reserved.</p>
+          <a href="mailto:hello@atelier-hair.com" className="inline-flex items-center gap-2 hover:text-[var(--color-primary-1)]">
+            hello@atelier-hair.com
+          </a>
         </div>
       </div>
     </footer>
