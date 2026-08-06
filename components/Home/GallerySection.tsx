@@ -2,7 +2,7 @@ import { Gallery, GalleryGrid, GalleryImage } from "@/components/ui/shared-eleme
 import Reveal from "./Reveal";
 
 const images = [
-  { id: "atelier-1", src: "/assets/hero_2.png", alt: "Glossy dimensional blonde hair" },
+  { id: "atelier-1", src: "/assets/hero_3.png", alt: "Glossy dimensional blonde hair" },
   { id: "atelier-10", src: "/assets/girl1.png", alt: "Soft extension finish" },
   { id: "atelier-2", src: "/assets/girl_2.png", alt: "Soft brunette hair result" },
   { id: "atelier-3", src: "/assets/step5.png", alt: "Hair consultation and texture detail" },

@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="container relative z-10">
         <div className="grid max-3xl:min-h-[calc(100vh-148px)] grid-cols-1 items-center gap-4 pt-28 lg:grid-cols-[30%_45%_20%]   lg:gap-6 lg:pt-0">
           <motion.div
-            className="relative z-30"
+            className="relative z-30 mt-20"
             initial="hidden"
             animate="show"
             variants={{
