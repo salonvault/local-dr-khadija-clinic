@@ -59,11 +59,13 @@ function TestimonialCard({
   testimonial,
   handleMove,
   cardSize,
+  isCompact,
 }: {
   position: number;
   testimonial: Testimonial;
   handleMove: (steps: number) => void;
   cardSize: number;
+  isCompact: boolean;
 }) {
   const isCenter = position === 0;
 
@@ -78,14 +80,17 @@ function TestimonialCard({
       )}
       style={{
         width: cardSize,
-        height: cardSize,
+        height: isCompact ? "auto" : cardSize,
+        minHeight: isCompact ? 380 : cardSize,
         clipPath:
-          "polygon(44px 0%, calc(100% - 44px) 0%, 100% 44px, 100% 100%, calc(100% - 44px) 100%, 44px 100%, 0 100%, 0 0)",
+          isCompact
+            ? "polygon(32px 0%, calc(100% - 32px) 0%, 100% 32px, 100% 100%, calc(100% - 32px) 100%, 32px 100%, 0 100%, 0 0)"
+            : "polygon(44px 0%, calc(100% - 44px) 0%, 100% 44px, 100% 100%, calc(100% - 44px) 100%, 44px 100%, 0 100%, 0 0)",
         transform: `
           translate(-50%, -50%)
-          translateX(${(cardSize / 1.45) * position}px)
-          translateY(${isCenter ? -48 : position % 2 ? 18 : -18}px)
-          rotate(${isCenter ? 0 : position % 2 ? 2.5 : -2.5}deg)
+          translateX(${((isCompact ? cardSize / 1.25 : cardSize / 1.45) * position)}px)
+          translateY(${isCompact ? (isCenter ? -34 : position % 2 ? 14 : -14) : isCenter ? -48 : position % 2 ? 18 : -18}px)
+          rotate(${isCompact ? (isCenter ? 0 : position % 2 ? 1.5 : -1.5) : isCenter ? 0 : position % 2 ? 2.5 : -2.5}deg)
         `,
       }}
     >
@@ -119,9 +124,9 @@ function TestimonialCard({
         </div>
       </div>
 
-      <Quote className="relative z-10 mt-8 h-6 w-6 shrink-0 text-[var(--barber-gold)]" />
+      <Quote className="relative z-10 mt-6 h-6 w-6 shrink-0 text-[var(--barber-gold)] sm:mt-8" />
 
-      <h3 className={cn("relative z-10 mt-3 font-heading text-[18px] font-bold uppercase leading-[1.08] sm:text-[22px]", isCenter ? "text-[var(--warm-cream)]" : "text-[rgba(244,239,231,0.78)]")}>
+      <h3 className={cn("relative z-10 mt-3 font-body! text-[16px] font-medium leading-[1.35] sm:text-[18px] sm:leading-[1.18]", isCenter ? "text-[var(--warm-cream)]" : "text-[rgba(244,239,231,0.78)]")}>
         &quot;{testimonial.testimonial}&quot;
       </h3>
 
@@ -137,6 +142,7 @@ function TestimonialCard({
 
 export default function TestimonialsSection() {
   const [cardSize, setCardSize] = useState(290);
+  const [isCompact, setIsCompact] = useState(false);
   const [testimonialsList, setTestimonialsList] = useState(testimonials);
 
   const handleMove = useCallback((steps: number) => {
@@ -165,11 +171,9 @@ export default function TestimonialsSection() {
 
   useEffect(() => {
     const updateSize = () => {
-      setCardSize(
-        window.matchMedia("(min-width: 640px)").matches
-          ? 365
-          : Math.max(290, Math.min(340, window.innerWidth - 48))
-      );
+      const desktop = window.matchMedia("(min-width: 640px)").matches;
+      setIsCompact(!desktop);
+      setCardSize(desktop ? 365 : Math.max(300, Math.min(350, window.innerWidth - 32)));
     };
 
     updateSize();
@@ -194,7 +198,7 @@ export default function TestimonialsSection() {
           </h2>
         </div>
 
-        <div className="relative mx-auto w-full max-w-6xl overflow-hidden" style={{ height: 610 }}>
+        <div className="relative mx-auto w-full max-w-6xl overflow-hidden" style={{ height: isCompact ? 650 : 610 }}>
           <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-20 bg-gradient-to-r from-[var(--charcoal-brick)] to-transparent sm:w-32" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-30 w-20 bg-gradient-to-l from-[var(--charcoal-brick)] to-transparent sm:w-32" />
 
@@ -208,6 +212,7 @@ export default function TestimonialsSection() {
                 handleMove={handleMove}
                 position={position}
                 cardSize={cardSize}
+                isCompact={isCompact}
               />
             );
           })}

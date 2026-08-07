@@ -53,6 +53,7 @@
   html {
     scroll-behavior: smooth;
     background: var(--color-background);
+    font-synthesis: none;
   }
 
   body {
@@ -64,6 +65,7 @@
     background-size: 46px 46px, 46px 46px, auto;
     color: var(--color-foreground);
     font-family: var(--font-body);
+    font-synthesis: none;
   }
 
   h1,
@@ -74,6 +76,7 @@
   h6 {
     font-family: var(--font-heading);
     letter-spacing: 0;
+    font-synthesis: none;
   }
 
   a {
@@ -85,6 +88,40 @@
   input,
   textarea {
     font-family: var(--font-body);
+  }
+}
+
+@media (max-width: 767px) {
+  .font-heading,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 400 !important;
+    font-synthesis: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+  }
+
+  h1.font-heading {
+    font-size: clamp(44px, 16vw, 68px) !important;
+    line-height: 0.98 !important;
+  }
+
+  h2.font-heading {
+    font-size: clamp(34px, 12vw, 52px) !important;
+    line-height: 1 !important;
+  }
+
+  h3.font-heading {
+    font-size: clamp(26px, 10vw, 42px) !important;
+    line-height: 1.02 !important;
+  }
+
+  article h3.font-heading {
+    font-size: clamp(24px, 8.8vw, 36px) !important;
   }
 }
 

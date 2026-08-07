@@ -16,11 +16,13 @@ export const dm_mono = DM_Mono({
 export const heading_font = localFont({
   src: "./CRACKED.ttf",
   variable: "--font-heading",
+  weight: "400",
   display: "swap",
 });
 
 export const heading_font_2 = localFont({
   src: "./DCC.otf",
   variable: "--font-heading_2",
+  weight: "400",
   display: "swap",
 });
