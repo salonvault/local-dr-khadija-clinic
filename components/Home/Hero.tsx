@@ -6,7 +6,7 @@ import { CalendarCheck } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative max-3xl:min-h-[calc(100vh-82px)] max-h-[800px]  overflow-hidden ">
+    <section className="relative max-3xl:min-h-[calc(100vh-82px)] lg:max-h-[800px]  overflow-hidden ">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-[92px] z-0 hidden w-[94vw] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(164,87,86,0.06)_0%,rgba(164,87,86,0.42)_32%,rgba(164,87,86,0.76)_58%,rgba(164,87,86,0.1)_100%)]  bg-clip-text text-center font-heading! text-[clamp(96px,12.5vw,170px)] font-light uppercase leading-[0.78] tracking-[-0.06em] text-transparent lg:block"
@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="container relative z-10">
         <div className="grid max-3xl:min-h-[calc(100vh-148px)] grid-cols-1 items-center gap-4 pt-28 lg:grid-cols-[30%_45%_20%]   lg:gap-6 lg:pt-0">
           <motion.div
-            className="relative z-30 mt-20"
+            className="relative z-30 lg:mt-20"
             initial="hidden"
             animate="show"
             variants={{
