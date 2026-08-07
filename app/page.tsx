@@ -1,6 +1,7 @@
 
 import Hero from "@/components/Home/Hero"
 import ExperienceSection from "@/components/Home/ExperienceSection"
+import ExpertiseStripSection from "@/components/Home/ExpertiseStripSection"
 import ResultsSection from "@/components/Home/ResultsSection"
 import StepsSection from "@/components/Home/StepsSection"
 import ProcessFaqSection from "@/components/Home/ProcessFaqSection"
@@ -17,6 +18,7 @@ function page() {
       <main>
         <Hero />
         <ExperienceSection />
+        <ExpertiseStripSection />
         <GallerySection />
         <ResultsSection />
         <StepsSection />

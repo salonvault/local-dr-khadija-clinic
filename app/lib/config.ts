@@ -1,36 +1,36 @@
 import type { Metadata } from "next";
 
-export const BASE_URL = "https://atelier-hair.vercel.app";
+export const BASE_URL = "https://iron-oak-barber.vercel.app";
 
-const title = "Atelier Hair | Premium Hair Extension & Color Specialists";
+const title = "Iron & Oak Barber Co. | Premium Barber Shop";
 const description =
-  "Atelier Hair is a warm, editorial salon experience specializing in premium extensions, balayage, dimensional color, and bridal styling.";
-const ogImage = "/assets/hero_girl.png";
+  "Iron & Oak Barber Co. delivers precision cuts, modern fades, beard grooming, and traditional straight razor craftsmanship.";
+const ogImage = "/assets/barber-hero.png";
 
 export const seoMetadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     default: title,
-    template: "%s | Atelier Hair",
+    template: "%s | Iron & Oak Barber Co.",
   },
   description,
-  applicationName: "Atelier Hair",
+  applicationName: "Iron & Oak Barber Co.",
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
-  category: "Hair Salon",
+  category: "Barber Shop",
   keywords: [
-    "Atelier Hair",
-    "premium hair extensions",
-    "hair extension salon",
-    "balayage salon",
-    "luxury hair color",
-    "bridal hair styling",
-    "dimensional hair color",
-    "editorial hair salon",
+    "Iron & Oak Barber Co.",
+    "premium barber shop",
+    "modern fades",
+    "beard grooming",
+    "straight razor shave",
+    "men's haircut",
+    "barber craftsmanship",
+    "luxury barber experience",
   ],
-  authors: [{ name: "Atelier Hair" }],
-  creator: "Atelier Hair",
-  publisher: "Atelier Hair",
+  authors: [{ name: "Iron & Oak Barber Co." }],
+  creator: "Iron & Oak Barber Co.",
+  publisher: "Iron & Oak Barber Co.",
   alternates: {
     canonical: BASE_URL,
   },
@@ -56,7 +56,7 @@ export const seoMetadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: BASE_URL,
-    siteName: "Atelier Hair",
+    siteName: "Iron & Oak Barber Co.",
     title,
     description,
     images: [
@@ -64,7 +64,7 @@ export const seoMetadata: Metadata = {
         url: ogImage,
         width: 1536,
         height: 1024,
-        alt: "Atelier Hair premium extensions and dimensional color",
+        alt: "Iron & Oak Barber Co. premium barber shop interior",
       },
     ],
   },

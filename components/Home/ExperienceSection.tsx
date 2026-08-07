@@ -1,54 +1,79 @@
-import Image from "next/image";
+import { BadgeCheck, Brush, Scissors, Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
+
+const services = [
+  {
+    icon: Scissors,
+    title: "Signature Cut",
+    text: "A tailored cut built around head shape, hair texture, and daily styling habits.",
+    price: "$45",
+  },
+  {
+    icon: Brush,
+    title: "Straight Razor Shave",
+    text: "Hot towel prep, rich lather, razor finish, and a calm reset at the chair.",
+    price: "$35",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Beard Sculpt",
+    text: "Line work, density shaping, and conditioning for a sharper profile.",
+    price: "$25",
+  },
+  {
+    icon: Sparkles,
+    title: "Fade & Finish",
+    text: "Clean skin fades, taper work, texture control, and product styling.",
+    price: "$55",
+  },
+];
 
 export default function ExperienceSection() {
   return (
-    <section id="color" className="relative overflow-hidden bg-[#ede8e6] py-20 text-[var(--color-foreground)] lg:py-28">
+    <section id="services" className="relative overflow-hidden bg-[var(--midnight-black)] py-20 text-[var(--warm-cream)] lg:py-28">
       <div className="container">
-        <div className="grid items-center gap-14 lg:grid-cols-[52%_48%]">
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div>
-            <div className="mb-8 grid grid-cols-[1fr_auto] items-start gap-8 text-[10px] font-extrabold uppercase tracking-[0.08em] text-[var(--color-primary-1)]">
-              <span>About the atelier</span>
-              <span>{new Date().getFullYear()}</span>
-            </div>
-
+            <p className="eyebrow">Men's grooming services</p>
             <Reveal>
-              <h2 className="relative max-w-[670px] font-heading text-[clamp(32px,4.6vw,72px)] font-semibold leading-[0.82] text-[var(--color-foreground)]">
-                Before she books, she needs to picture fuller hair that still feels completely{" "}
-                <span className="text-[var(--color-primary-1)]">like her</span>
+              <h2 className="mt-4 max-w-[520px] font-heading text-[clamp(42px,5.4vw,82px)] font-bold uppercase leading-[0.86]">
+                Traditional barbering. Modern style.
               </h2>
             </Reveal>
-
-            <p className="mt-8 max-w-[520px] font-heading text-[clamp(22px,2.1vw,31px)] font-semibold leading-[0.96]">
-              Subtle enough for real life. Polished enough for the moments that matter.
-            </p>
-
-            <div className="mt-10 grid gap-8 md:grid-cols-[1fr_0.78fr] md:items-end">
-              <div className="rounded-[8px] border border-[rgba(164,87,86,0.12)] bg-[linear-gradient(135deg,#ead7d2_0%,#f7eee9_44%,#d5b8ac_100%)] p-6 shadow-[0_14px_34px_rgba(62,57,53,0.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(62,57,53,0.12)]">
-                <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--color-primary-1)]">
-                  The Atelier feeling
-                </p>
-                <p className="mt-5 text-[13px] leading-[1.7] text-[var(--color-ink-2)]">
-                  Every consultation begins with texture, density, lifestyle, and tone. The result is seamless color and extensions that move naturally, photograph softly, and grow out gracefully.
-                </p>
-              </div>
-
-              <p className="max-w-[260px] text-[12px] leading-[1.6] text-[var(--color-primary-1)]">
-                Designed for women who want fuller, healthier-looking hair without an obvious transformation or a loud salon experience.
-              </p>
-            </div>
           </div>
+          <p className="max-w-[620px] text-[14px] leading-[1.8] text-[var(--color-ink-2)] lg:justify-self-end">
+            Every appointment begins with a quick consultation, then moves through precise cutting, clean detailing, and a finish you can recreate when you leave.
+          </p>
+        </div>
 
-          <div className="relative">
-            <Image
-              src="/assets/mobile_mockups.png"
-              alt="Atelier Hair mobile salon experience previews"
-              width={980}
-              height={900}
-              sizes="(min-width: 1024px) 48vw, 100vw"
-              className="ml-auto h-auto w-full max-w-[620px] object-contain drop-shadow-[0_28px_58px_rgba(62,57,53,0.16)]"
-            />
-          </div>
+        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <article
+                key={service.title}
+                className={`rounded-[8px] border p-6 shadow-[var(--shadow-card)] transition duration-300 hover:-translate-y-1 ${
+                  index === 1
+                    ? "border-[var(--barber-gold)] bg-[var(--barber-gold)] text-[var(--midnight-black)]"
+                    : "border-[rgba(232,139,26,0.2)] bg-[rgba(36,32,30,0.82)] text-[var(--warm-cream)]"
+                }`}
+              >
+                <div className={`grid h-12 w-12 place-items-center rounded-[6px] ${index === 1 ? "bg-[var(--midnight-black)] text-[var(--barber-gold)]" : "bg-[rgba(232,139,26,0.12)] text-[var(--barber-gold)]"}`}>
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-8 font-heading text-[30px] font-bold uppercase leading-none">
+                  {service.title}
+                </h3>
+                <p className={`mt-4 min-h-20 text-[13px] leading-[1.65] ${index === 1 ? "text-black/70" : "text-[var(--color-ink-2)]"}`}>
+                  {service.text}
+                </p>
+                <div className="mt-7 border-t border-current/20 pt-4">
+                  <p className="text-[10px] font-extrabold uppercase tracking-[0.08em] opacity-70">Starting at</p>
+                  <p className="mt-1 font-heading text-[34px] font-bold leading-none">{service.price}</p>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

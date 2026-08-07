@@ -1,4 +1,5 @@
-import { Gilda_Display, DM_Mono, Manrope, Outfit } from "next/font/google";
+import { Cinzel, DM_Mono, Manrope } from "next/font/google";
+import localFont from "next/font/local";
 
 export const body_font = Manrope({
   variable: "--font-body",
@@ -12,14 +13,14 @@ export const dm_mono = DM_Mono({
   weight: ["400", "500"],
 });
 
-export const heading_font = Gilda_Display({
+export const heading_font = localFont({
+  src: "./CRACKED.ttf",
   variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["400"],
+  display: "swap",
 });
 
-export const heading_font_2 = Outfit({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+export const heading_font_2 = localFont({
+  src: "./DCC.otf",
+  variable: "--font-heading_2",
+  display: "swap",
 });
