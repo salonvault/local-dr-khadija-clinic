@@ -1,76 +1,72 @@
 "use client";
 
-import { CalendarCheck, Menu } from "lucide-react";
+import { ArrowUpRight, Menu } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navItems = [
-  { label: "Home", href: "#" },
-  { label: "Services", href: "#services" },
-  { label: "Craft", href: "#craft" },
-  { label: "Barbers", href: "#barbers" },
+  { label: "Home", href: "#hero" },
+  { label: "Skincare", href: "#services" },
+  { label: "Studio", href: "#studio" },
+  { label: "Services", href: "#treatments" },
+  { label: "Reviews", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
 ];
 
 export default function Header() {
-  const [activeHref, setActiveHref] = useState("#");
+  const [pastHero, setPastHero] = useState(false);
 
   useEffect(() => {
-    const sectionItems = navItems.filter((item) => item.href !== "#");
-    const sections = sectionItems
-      .map((item) => document.querySelector(item.href))
-      .filter((section): section is Element => section !== null);
-
-    const updateActiveLink = () => {
-      if (window.scrollY < 120) {
-        setActiveHref("#");
-      }
+    const updateHeaderTheme = () => {
+      const hero = document.querySelector("#hero");
+      const threshold = hero instanceof HTMLElement ? hero.offsetTop + hero.offsetHeight - 90 : window.innerHeight - 90;
+      setPastHero(window.scrollY >= threshold);
     };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (visibleEntry?.target.id) {
-          setActiveHref(`#${visibleEntry.target.id}`);
-        }
-
-        updateActiveLink();
-      },
-      {
-        rootMargin: "-22% 0px -58% 0px",
-        threshold: [0.12, 0.24, 0.4],
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    updateActiveLink();
-    window.addEventListener("scroll", updateActiveLink, { passive: true });
+    updateHeaderTheme();
+    window.addEventListener("scroll", updateHeaderTheme, { passive: true });
+    window.addEventListener("resize", updateHeaderTheme);
 
     return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", updateActiveLink);
+      window.removeEventListener("scroll", updateHeaderTheme);
+      window.removeEventListener("resize", updateHeaderTheme);
     };
   }, []);
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-4 md:px-7">
-      <div className="mx-auto flex min-h-14 max-w-[1320px] items-center justify-between gap-4 rounded-[8px] border border-[rgba(232,139,26,0.24)] bg-[rgba(17,17,17,0.82)] px-4 shadow-[0_20px_70px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(244,239,231,0.1)] backdrop-blur-2xl backdrop-saturate-150 md:px-5">
-        <a href="#" className="flex items-center gap-2" aria-label="Iron & Oak Barber Co. home">
-          <span className="font-heading text-[22px] font-bold uppercase leading-none text-[var(--warm-cream)]">
-            Iron & Oak
-          </span>
+    <header className="fixed left-0 right-0 top-0 z-50 px-3 pt-4 md:px-6">
+      <div
+        className={`mx-auto grid max-w-[1320px] grid-cols-[120px_1fr_auto] items-center gap-4 rounded-full border px-5 py-1.5 shadow-[0_18px_46px_rgba(65,34,9,0.14)] backdrop-blur-[18px] backdrop-saturate-150 transition-colors duration-300 md:grid-cols-[170px_1fr_238px] md:px-6 ${
+          pastHero
+            ? "border-[rgba(107,73,50,0.14)] bg-white/86"
+            : "border-white/22 bg-white/12"
+        }`}
+      >
+        <a
+          href="#"
+          aria-label="AURELIA Beauty & Wellness home"
+          className={`font-heading text-[26px] font-normal uppercase leading-none tracking-[0.08em] transition-colors ${
+            pastHero ? "text-[var(--color-foreground)]" : "text-white"
+          }`}
+        >
+          Aurelia
         </a>
 
-        <nav className="hidden items-center gap-7 text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--color-ink-2)] lg:flex">
-          {navItems.map((item) => (
+        <nav
+          className={`mx-auto hidden h-9 items-center rounded-full p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition-colors lg:flex ${
+            pastHero ? "bg-[rgba(48,37,31,0.06)]" : "bg-white/10"
+          }`}
+        >
+          {navItems.map((item, index) => (
             <a
               key={item.label}
               href={item.href}
-              className={`transition-colors hover:text-[var(--barber-gold)] ${
-                activeHref === item.href ? "text-[var(--color-primary-1)]" : ""
+              className={`nav-label flex h-7 items-center rounded-full px-4 transition ${
+                index === 0
+                  ? "bg-[#c77417] text-white shadow-[0_12px_28px_rgba(52,23,5,0.18)]"
+                  : pastHero
+                    ? "text-[var(--color-foreground)]/82 hover:bg-[rgba(169,104,50,0.1)] hover:text-[var(--color-foreground)]"
+                    : "text-white/88 hover:bg-white/10 hover:text-white"
               }`}
             >
               {item.label}
@@ -78,38 +74,49 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="hidden items-center justify-end gap-5 lg:flex">
+          <a
+            href="#login"
+            className={`nav-label transition ${
+              pastHero ? "text-[var(--color-foreground)]/82 hover:text-[var(--color-foreground)]" : "text-white/88 hover:text-white"
+            }`}
+          >
+            Login
+          </a>
           <a
             href="#book"
-            className="hidden min-h-9 items-center justify-center rounded-[6px] border border-[var(--barber-gold)] bg-[var(--barber-gold)] px-5 text-[11px] font-extrabold uppercase tracking-[0.08em] text-[var(--midnight-black)] shadow-[0_14px_28px_rgba(232,139,26,0.2)] transition-colors hover:bg-[#ff9d26] lg:inline-flex"
+            className="nav-label inline-flex h-9 items-center gap-2.5 rounded-full bg-primary-1 py-1 pl-4 pr-1 text-white shadow-[0_16px_34px_rgba(78,38,7,0.18)] transition hover:bg-[#a85f13]"
           >
-            Reserve Chair
+            Book Appointment
+            <span className="grid h-7 w-7 place-items-center rounded-full bg-white text-[#c77417]">
+              <ArrowUpRight className="h-4 w-4" strokeWidth={2.4} />
+            </span>
           </a>
+        </div>
 
-          <Sheet>
-            <SheetTrigger className="inline-flex h-10 w-10 items-center justify-center rounded-[6px] border border-[var(--graphite-gray)] text-[var(--warm-cream)] transition-colors hover:bg-[var(--charcoal-brick)] lg:hidden">
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Open menu</span>
-            </SheetTrigger>
-          <SheetContent className="border-[rgba(232,139,26,0.24)] bg-[rgba(17,17,17,0.94)] p-5 text-[var(--warm-cream)] shadow-[0_20px_70px_rgba(0,0,0,0.44)] backdrop-blur-2xl backdrop-saturate-150">
-              <div className="flex items-center gap-2">
-                <span className="grid h-8 w-8 place-items-center rounded-[6px] border border-[var(--barber-gold)]/30 text-[13px] text-[var(--barber-gold)]">
-                  IO
-                </span>
-                <span className="font-heading text-[24px] font-bold uppercase">Iron & Oak</span>
-              </div>
-          
-            <nav className="mt-5 grid gap-2 text-[14px] font-normal text-[var(--color-foreground)]">
+        <Sheet>
+          <SheetTrigger
+            className={`ml-auto inline-flex h-9 w-9 items-center justify-center rounded-full border transition-colors lg:hidden ${
+              pastHero
+                ? "border-[rgba(107,73,50,0.18)] bg-white/70 text-[var(--color-foreground)]"
+                : "border-white/30 bg-white/18 text-white"
+            }`}
+          >
+            <Menu className="h-5 w-5" />
+            <span className="sr-only">Open menu</span>
+          </SheetTrigger>
+          <SheetContent className="border-[rgba(107,73,50,0.18)] bg-[var(--warm-cream)] p-5 text-[var(--color-foreground)] shadow-[0_20px_70px_rgba(107,73,50,0.18)]">
+            <div className="flex items-center gap-3">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-[#c77417] text-white">
+                A
+              </span>
+              <span className="heading-h3 uppercase tracking-[0.05em]">Aurelia</span>
+            </div>
+
+            <nav className="mt-6 grid gap-2">
               {navItems.map((item) => (
                 <SheetClose asChild key={item.label}>
-                  <a
-                    href={item.href}
-                    className={`flex items-center justify-between rounded-[8px] border px-4 py-3 transition-colors hover:border-[var(--barber-gold)]/40 hover:bg-[var(--charcoal-brick)] hover:text-[var(--barber-gold)] ${
-                      activeHref === item.href
-                        ? "border-[var(--barber-gold)]/40 bg-[var(--charcoal-brick)] text-[var(--barber-gold)]"
-                        : "border-transparent bg-[rgba(36,32,30,0.62)]"
-                    }`}
-                  >
+                  <a href={item.href} className="para-p2 rounded-[8px] border border-transparent bg-white/64 px-4 py-3 transition hover:border-[rgba(169,104,50,0.3)] hover:text-[#bd690f]">
                     {item.label}
                   </a>
                 </SheetClose>
@@ -117,14 +124,13 @@ export default function Header() {
             </nav>
 
             <SheetClose asChild>
-              <a href="#book" className="mt-6 flex min-h-12 w-full items-center justify-center gap-2 rounded-[6px] bg-[var(--barber-gold)] px-5 text-[12px] font-extrabold uppercase tracking-[0.08em] text-[var(--midnight-black)] shadow-[0_14px_28px_rgba(232,139,26,0.22)]">
-                <CalendarCheck className="h-4 w-4" />
-                Reserve Your Chair
+              <a href="#book" className="nav-label mt-6 flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#c77417] px-5 text-white">
+                Book Appointment
+                <ArrowUpRight className="h-4 w-4" />
               </a>
             </SheetClose>
           </SheetContent>
         </Sheet>
-        </div>
       </div>
     </header>
   );

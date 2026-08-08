@@ -1,119 +1,137 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { ArrowUpRight, CalendarCheck, Scissors } from "lucide-react";
+import { ArrowUpRight, BadgeCheck, FlaskConical, Flower2, Heart, Sparkles } from "lucide-react";
+import heroBackground from "../../public/assets/bg.png";
 
-const stats = [
-  { value: "14+", label: "Years behind the chair" },
-  { value: "4.9", label: "Average guest rating" },
-  { value: "30m", label: "Signature fade window" },
-];
+
+
+function MiniImage() {
+  return (
+    <div className="relative h-[104px] w-[104px] shrink-0 overflow-hidden rounded-[14px] bg-white/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.42)] md:h-[118px] md:w-[118px]">
+      <Image
+        src="/assets/hero.png"
+        alt="Aurelia facial treatment in warm natural light"
+        fill
+        sizes="168px"
+        className="object-cover"
+        style={{ objectPosition: "62% 54%" }}
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(87,41,8,0.18))]" />
+    </div>
+  );
+}
+
+function ArrowBadge() {
+  return (
+    <span className="hero-cta-icon bg-white text-[#c77417]">
+      <ArrowUpRight className="h-4.5 w-4.5" strokeWidth={2.3} />
+    </span>
+  );
+}
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[var(--midnight-black)] pt-24 text-[var(--warm-cream)]">
-      <Image
-        src="/assets/barber-hero.png"
-        alt="Premium barber shop with leather chair, black brick, and warm amber light"
-        fill
-        sizes="100vw"
-        className="object-cover object-top"
-        priority
-      />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,17,17,0.96)_0%,rgba(17,17,17,0.46)_38%,rgba(17,17,17,0.22)_72%,rgba(17,17,17,0.32)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_22%,rgba(232,139,26,0.18),transparent_28%),linear-gradient(180deg,transparent_64%,#111111_100%)]" />
+    <section id="hero" className="relative overflow-hidden bg-white p-[2px] text-white">
+      <div className="relative min-h-[calc(100vh-4px)] overflow-hidden bg-[#92510f] shadow-[0_26px_70px_rgba(73,40,11,0.2)]">
+        <Image
+          src={heroBackground}
+          alt=""
+          fill
+          sizes="100vw"
+          className="z-0 object-cover"
+          placeholder="blur"
+          preload
+        />
+      
+       
 
-      <div className="container relative z-10 grid min-h-[calc(100vh-96px)] items-center gap-10 py-14 lg:grid-cols-[0.96fr_0.7fr]">
-        <motion.div
-          initial="hidden"
-          animate="show"
-          variants={{
-            hidden: {},
-            show: { transition: { staggerChildren: 0.1, delayChildren: 0.12 } },
-          }}
-        >
-          <motion.p
-            className="inline-flex rounded-[4px] border border-[rgba(232,139,26,0.36)] bg-[rgba(232,139,26,0.1)] px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.08em] text-[var(--barber-gold)]"
-            variants={{
-              hidden: { opacity: 0, y: 12 },
-              show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-            }}
-          >
-            Premium barber experience
-          </motion.p>
+        <div className="absolute inset-y-0 right-[17%] z-0 hidden w-[60%] min-w-[560px] [mask-image:linear-gradient(to_bottom,#000_0%,#000_72%,transparent_99%)] [-webkit-mask-image:linear-gradient(to_bottom,#000_0%,#000_72%,transparent_99%)] lg:block">
+          <Image
+            src="/assets/girl_hero.png"
+            alt="Woman applying a facial cotton pad for Aurelia beauty care"
+            fill
+            sizes="(max-width: 768px) 110vw, 920px"
+            className="object-contain object-right-top"
+            preload
+          />
+        </div>
 
-          <motion.h1
-            className="mt-6 max-w-[760px] font-heading text-[clamp(56px,8.4vw,124px)] font-bold uppercase leading-[0.86] text-[var(--warm-cream)]"
-            variants={{
-              hidden: { opacity: 0, y: 18 },
-              show: { opacity: 1, y: 0, transition: { duration: 0.68, ease: [0.22, 1, 0.36, 1] } },
-            }}
-          >
-            Crafted cuts.
-            <span className="block text-[var(--barber-gold)]">Built sharp.</span>
-          </motion.h1>
 
-          <motion.p
-            className="mt-6 max-w-[520px] text-[15px] leading-[1.75] text-[var(--color-ink-2)]"
-            variants={{
-              hidden: { opacity: 0, y: 12 },
-              show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-            }}
-          >
-            Precision barbering with modern craftsmanship. From skin fades to straight razor shaves, every service is shaped around your style, routine, and confidence.
-          </motion.p>
+        <div className="relative z-30 flex min-h-[calc(100vh-4px)] flex-col px-5 pb-6 pt-24 sm:px-7 md:px-12 md:pt-28 lg:grid lg:grid-rows-[auto_1fr_auto] lg:px-16 lg:pb-9 lg:pt-36">
+          <div className="max-w-[690px]">
+            <p className="hero-kicker">
+              <BadgeCheck className="h-3.5 w-3.5" />
+              Real Beauty, Real Results
+            </p>
 
-          <motion.div
-            className="mt-8 flex flex-col gap-3 sm:flex-row"
-            variants={{
-              hidden: { opacity: 0, y: 12 },
-              show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-            }}
-          >
-            <a id="book" href="mailto:hello@ironandoakbarber.com" className="navy-button min-h-12 px-6 uppercase tracking-[0.08em]">
-              <CalendarCheck className="h-4 w-4" />
-              Reserve Your Chair
-            </a>
-            <a href="#services" className="outline-button min-h-12 px-6 uppercase tracking-[0.08em]">
-              View Services
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
-          </motion.div>
-        </motion.div>
+            <h1 className="heading-h1 hero-title mt-5">
+              Natural Beauty
+              <span className="hero-title-accent block">& Wellness Care.</span>
+            </h1>
 
-        <div className="relative self-end lg:pb-14">
-          <div className="atelier-panel ml-auto max-w-[360px] p-5">
-            <div className="flex items-center gap-3 text-[var(--barber-gold)]">
-              <span className="grid h-10 w-10 place-items-center rounded-[6px] bg-[rgba(232,139,26,0.14)]">
-                <Scissors className="h-5 w-5" />
-              </span>
-              <p className="text-[10px] font-extrabold uppercase tracking-[0.08em]">Iron & Oak Method</p>
+            <div className="mt-5 flex max-w-[410px] items-center gap-4 text-[#d7934d]/74">
+              <span className="h-px flex-1 bg-current" />
+              <Flower2 className="h-4 w-4 shrink-0" strokeWidth={1.7} />
+              <span className="h-px flex-1 bg-current" />
             </div>
-            <div className="mt-5 grid gap-2">
-              {["Consult the shape", "Cut with intention", "Finish for daily wear"].map((item, index) => (
-                <div
-                  key={item}
-                  className={`rounded-[6px] border px-4 py-3 text-[12px] font-bold ${
-                    index === 1
-                      ? "border-[var(--barber-gold)] bg-[var(--barber-gold)] text-[var(--midnight-black)]"
-                      : "border-[rgba(232,139,26,0.18)] bg-[rgba(17,17,17,0.42)] text-[var(--warm-cream)]"
-                  }`}
-                >
-                  {item}
-                </div>
-              ))}
+
+            <p className="hero-copy mt-6">
+              Indulge in expert skincare and beauty treatments designed to enhance your natural glow and well-being.
+            </p>
+
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a href="#book" className="hero-cta bg-[#c77417] text-white shadow-[0_18px_38px_rgba(76,34,6,0.26)] transition hover:bg-[#a85f13]">
+                Book Appointment
+                <ArrowBadge />
+              </a>
+              <a href="#services" className="hero-cta border border-white/24 bg-white/8 text-white/88 backdrop-blur-md transition hover:bg-white/14">
+                Explore Treatments
+                <span className="hero-cta-icon border border-white/24 bg-white/8 text-white">
+                  <ArrowUpRight className="h-4.5 w-4.5" strokeWidth={2.3} />
+                </span>
+              </a>
             </div>
           </div>
 
-          <div className="mt-4 grid grid-cols-3 gap-2">
-            {stats.map((stat) => (
-              <div key={stat.label} className="rounded-[8px] border border-[rgba(232,139,26,0.18)] bg-[rgba(17,17,17,0.62)] p-4 backdrop-blur">
-                <p className="font-heading text-[28px] font-bold leading-none text-[var(--barber-gold)]">{stat.value}</p>
-                <p className="mt-2 text-[10px] leading-[1.35] text-[var(--color-ink-2)]">{stat.label}</p>
+          <div className="relative z-0 -mx-5 mt-6 h-[360px] overflow-hidden [mask-image:linear-gradient(to_bottom,#000_0%,#000_78%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,#000_0%,#000_78%,transparent_100%)] sm:-mx-7 sm:h-[430px] md:-mx-12 md:h-[520px] lg:hidden">
+            <Image
+              src="/assets/girl_hero.png"
+              alt="Woman applying a facial cotton pad for Aurelia beauty care"
+              fill
+              sizes="100vw"
+              className="object-contain object-bottom"
+              preload
+            />
+          </div>
+
+          <div className="relative z-10 mt-[-46px] flex items-center gap-3 rounded-[14px] border border-white/16 bg-[#9b5919]/64 p-4 shadow-[0_22px_54px_rgba(49,20,4,0.24)] backdrop-blur-xl md:max-w-[520px] lg:hidden">
+            <MiniImage />
+            <div>
+              <p className="offer-title text-white">40% Off</p>
+              <p className="offer-subtitle mt-1 text-white">Your Glow Ritual</p>
+              <p className="offer-note mt-2 max-w-[190px] text-white/62">
+                Tailored facial care loved by 12K+ happy clients.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative hidden lg:block">
+            <div className="absolute -bottom-4  flex w-[360px] items-center gap-4 rounded-[14px] border border-white/16 bg-[#9b5919]/58 p-5 shadow-[0_24px_70px_rgba(49,20,4,0.28)] backdrop-blur-xl xl:right-8 xl:w-[410px]">
+              <MiniImage />
+              <div>
+                <p className="offer-title text-white">40% Off</p>
+                <p className="offer-subtitle mt-2 text-white">Your Glow Ritual</p>
+                <p className="offer-subtitle mt-3 text-white/92">Signature Facials & Beauty Care</p>
+                <p className="offer-note mt-3 max-w-[210px] text-white/62">
+                  Refresh your skin with tailored treatments loved by 12K+ happy clients.
+                </p>
               </div>
-            ))}
+            </div>
           </div>
+
+         
+          <a id="book" href="mailto:hello@aureliabeauty.com" className="sr-only">
+            Book Appointment
+          </a>
         </div>
       </div>
     </section>

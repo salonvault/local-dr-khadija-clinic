@@ -2,17 +2,17 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Iron & Oak Barber Co.",
-    short_name: "Iron & Oak",
-    description: "Premium barbering with modern craftsmanship.",
+    name: "AURELIA Beauty & Wellness",
+    short_name: "AURELIA",
+    description: "Thoughtful beauty rituals for your most radiant self.",
     start_url: "/",
     scope: "/",
     display: "standalone",
-    background_color: "#111111",
-    theme_color: "#E88B1A",
+    background_color: "#FAF7F2",
+    theme_color: "#A96832",
     icons: [
       {
-        src: "/assets/barber-hero.png",
+        src: "/assets/aurelia-hero.png",
         sizes: "512x512",
         type: "image/png",
       },

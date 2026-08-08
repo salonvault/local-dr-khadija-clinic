@@ -1,79 +1,84 @@
-import { BadgeCheck, Brush, Scissors, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import Reveal from "./Reveal";
 
-const services = [
+const products = [
   {
-    icon: Scissors,
-    title: "Signature Cut",
-    text: "A tailored cut built around head shape, hair texture, and daily styling habits.",
-    price: "$45",
+    title: "Glow Cream",
+    price: "$24",
+    image: "/assets/facial1.jpeg",
+    alt: "Aurelia skincare treatment product moment",
   },
   {
-    icon: Brush,
-    title: "Straight Razor Shave",
-    text: "Hot towel prep, rich lather, razor finish, and a calm reset at the chair.",
-    price: "$35",
-  },
-  {
-    icon: BadgeCheck,
-    title: "Beard Sculpt",
-    text: "Line work, density shaping, and conditioning for a sharper profile.",
-    price: "$25",
-  },
-  {
-    icon: Sparkles,
-    title: "Fade & Finish",
-    text: "Clean skin fades, taper work, texture control, and product styling.",
-    price: "$55",
+    title: "Hydration Ritual",
+    price: "$24",
+    image: "/assets/facial2.jpeg",
+    alt: "Aurelia warm skincare ritual",
   },
 ];
 
 export default function ExperienceSection() {
   return (
-    <section id="services" className="relative overflow-hidden bg-[var(--midnight-black)] py-20 text-[var(--warm-cream)] lg:py-28">
-      <div className="container">
-        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-          <div>
-            <p className="eyebrow">Men's grooming services</p>
+    <section id="services" className="bg-[var(--warm-cream)]  text-[var(--color-foreground)]">
+      <div className="relative min-h-[540px] overflow-hidden bg-[#f7f1e9] lg:min-h-[520px]">
+        <Image
+          src="/assets/bg_2.jpeg"
+          alt="Aurelia skincare model with soft natural skin"
+          fill
+          quality={100}
+          unoptimized
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-cover object-left-bottom opacity-90"
+          priority={false}
+        />
+
+        <div className="container relative z-10 flex min-h-[540px] items-center py-10 lg:min-h-[520px] lg:justify-end lg:py-10">
+          <div className="w-full rounded-[14px] border border-[rgba(107,73,50,0.12)] bg-white/90 p-5 shadow-[0_26px_80px_rgba(107,73,50,0.14)] backdrop-blur-xl sm:p-6 lg:w-[600px] lg:p-6">
+            <p className="eyebrow">Skin rituals, softly refined</p>
             <Reveal>
-              <h2 className="mt-4 max-w-[520px] font-heading text-[clamp(42px,5.4vw,82px)] font-bold uppercase leading-[0.86]">
-                Traditional barbering. Modern style.
+              <h2 className="heading-h2 mt-3 max-w-[560px]">
+                Discover  {" "}
+                <span className="inline-block rounded-[7px] bg-[var(--color-primary-1)] px-2 text-white">
+                  Nature & Care
+                </span>{" "}
+                With Aurelia Beauty Skincare.
               </h2>
             </Reveal>
-          </div>
-          <p className="max-w-[620px] text-[14px] leading-[1.8] text-[var(--color-ink-2)] lg:justify-self-end">
-            Every appointment begins with a quick consultation, then moves through precise cutting, clean detailing, and a finish you can recreate when you leave.
-          </p>
-        </div>
+            <p className="para-p3 mt-4 max-w-[520px]">
+              Our treatments combine thoughtful skincare, premium products, and calm hands-on care to support healthy, radiant skin.
+            </p>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <article
-                key={service.title}
-                className={`rounded-[8px] border p-6 shadow-[var(--shadow-card)] transition duration-300 hover:-translate-y-1 ${
-                  index === 1
-                    ? "border-[var(--barber-gold)] bg-[var(--barber-gold)] text-[var(--midnight-black)]"
-                    : "border-[rgba(232,139,26,0.2)] bg-[rgba(36,32,30,0.82)] text-[var(--warm-cream)]"
-                }`}
-              >
-                <div className={`grid h-12 w-12 place-items-center rounded-[6px] ${index === 1 ? "bg-[var(--midnight-black)] text-[var(--barber-gold)]" : "bg-[rgba(232,139,26,0.12)] text-[var(--barber-gold)]"}`}>
-                  <Icon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-8 font-heading text-[30px] font-bold uppercase leading-none">
-                  {service.title}
-                </h3>
-                <p className={`mt-4 min-h-20 text-[13px] leading-[1.65] ${index === 1 ? "text-black/70" : "text-[var(--color-ink-2)]"}`}>
-                  {service.text}
-                </p>
-                <div className="mt-7 border-t border-current/20 pt-4">
-                  <p className="text-[10px] font-extrabold uppercase tracking-[0.08em] opacity-70">Starting at</p>
-                  <p className="mt-1 font-heading text-[34px] font-bold leading-none">{service.price}</p>
-                </div>
-              </article>
-            );
-          })}
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {products.map((product) => (
+                <article key={product.title} className="overflow-hidden rounded-[8px] bg-[var(--color-primary-3)] shadow-[var(--shadow-card)]">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={product.image}
+                      alt={product.alt}
+                      fill
+                      sizes="(max-width: 640px) 90vw, 280px"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_56%,rgba(48,37,31,0.22)_100%)]" />
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-3">
+                      <a href="#book" className="inline-flex h-7 items-center gap-2 rounded-full border border-[rgba(48,37,31,0.22)] bg-white/84 px-3 text-[10px] font-extrabold uppercase text-[var(--color-foreground)] backdrop-blur">
+                        Book Now
+                        <ArrowRight className="h-3 w-3" />
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <a
+              href="#services"
+              className="mt-5 flex min-h-11 w-full items-center justify-center gap-2 rounded-[8px] bg-[var(--color-foreground)] px-5 text-[12px] font-bold text-[var(--warm-cream)] transition hover:bg-[var(--color-primary-2)]"
+            >
+              Explore More
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </div>
     </section>

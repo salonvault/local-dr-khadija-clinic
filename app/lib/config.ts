@@ -1,36 +1,37 @@
 import type { Metadata } from "next";
 
-export const BASE_URL = "https://iron-oak-barber.vercel.app";
+export const BASE_URL = "https://aurelia-beauty-wellness.vercel.app";
 
-const title = "Iron & Oak Barber Co. | Premium Barber Shop";
+const title = "AURELIA Beauty & Wellness | Modern Beauty Studio";
 const description =
-  "Iron & Oak Barber Co. delivers precision cuts, modern fades, beard grooming, and traditional straight razor craftsmanship.";
-const ogImage = "/assets/barber-hero.png";
+  "AURELIA Beauty & Wellness offers thoughtful skin, beauty, and wellness rituals designed to help you look refreshed and feel cared for.";
+const ogImage = "/assets/aurelia-hero.png";
 
 export const seoMetadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     default: title,
-    template: "%s | Iron & Oak Barber Co.",
+    template: "%s | AURELIA Beauty & Wellness",
   },
   description,
-  applicationName: "Iron & Oak Barber Co.",
+  applicationName: "AURELIA Beauty & Wellness",
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
-  category: "Barber Shop",
+  category: "Beauty & Wellness Studio",
   keywords: [
-    "Iron & Oak Barber Co.",
-    "premium barber shop",
-    "modern fades",
-    "beard grooming",
-    "straight razor shave",
-    "men's haircut",
-    "barber craftsmanship",
-    "luxury barber experience",
+    "AURELIA Beauty & Wellness",
+    "modern beauty studio",
+    "signature facial",
+    "deep cleansing facial",
+    "hydration treatment",
+    "glow therapy",
+    "brow sculpting",
+    "lash lift",
+    "relaxation ritual",
   ],
-  authors: [{ name: "Iron & Oak Barber Co." }],
-  creator: "Iron & Oak Barber Co.",
-  publisher: "Iron & Oak Barber Co.",
+  authors: [{ name: "AURELIA Beauty & Wellness" }],
+  creator: "AURELIA Beauty & Wellness",
+  publisher: "AURELIA Beauty & Wellness",
   alternates: {
     canonical: BASE_URL,
   },
@@ -56,7 +57,7 @@ export const seoMetadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: BASE_URL,
-    siteName: "Iron & Oak Barber Co.",
+    siteName: "AURELIA Beauty & Wellness",
     title,
     description,
     images: [
@@ -64,7 +65,7 @@ export const seoMetadata: Metadata = {
         url: ogImage,
         width: 1536,
         height: 1024,
-        alt: "Iron & Oak Barber Co. premium barber shop interior",
+        alt: "AURELIA Beauty & Wellness warm facial treatment studio",
       },
     ],
   },

@@ -2,11 +2,11 @@
 import Hero from "@/components/Home/Hero"
 import ExperienceSection from "@/components/Home/ExperienceSection"
 import ExpertiseStripSection from "@/components/Home/ExpertiseStripSection"
-import ResultsSection from "@/components/Home/ResultsSection"
 import StepsSection from "@/components/Home/StepsSection"
 import ProcessFaqSection from "@/components/Home/ProcessFaqSection"
 import TestimonialsSection from "@/components/Home/TestimonialsSection"
 import GallerySection from "@/components/Home/GallerySection"
+import ServicesSection from "@/components/Home/ServicesSection"
 import Header from "@/components/Layout/Header"
 import Footer from "@/components/Layout/Footer"
 
@@ -17,10 +17,10 @@ function page() {
       <Header />
       <main>
         <Hero />
-        <ExperienceSection />
         <ExpertiseStripSection />
+        <ExperienceSection />
+        <ServicesSection />
         <GallerySection />
-        <ResultsSection />
         <StepsSection />
         <ProcessFaqSection />
         <TestimonialsSection />
