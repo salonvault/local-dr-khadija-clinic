@@ -6,8 +6,8 @@ import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/s
 
 const navItems = [
   { label: "Home", href: "#hero" },
-  { label: "Skincare", href: "#services" },
-  { label: "Studio", href: "#studio" },
+  { label: "Results", href: "#services" },
+  { label: "Clinic", href: "#studio" },
   { label: "Services", href: "#treatments" },
   { label: "Reviews", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
@@ -36,7 +36,7 @@ export default function Header() {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 px-3 pt-4 md:px-6">
       <div
-        className={`mx-auto grid max-w-[1320px] grid-cols-[120px_1fr_auto] items-center gap-4 rounded-full border px-5 py-1.5 shadow-[0_18px_46px_rgba(65,34,9,0.14)] backdrop-blur-[18px] backdrop-saturate-150 transition-colors duration-300 md:grid-cols-[170px_1fr_238px] md:px-6 ${
+        className={`mx-auto grid max-w-[1320px] grid-cols-[120px_1fr_auto] items-center gap-4 rounded-full border px-1 ps-4 py-1.5 shadow-[0_18px_46px_rgba(65,34,9,0.14)] backdrop-blur-[18px] backdrop-saturate-150 transition-colors duration-300 md:grid-cols-[170px_1fr_238px] md:px-6 ${
           pastHero
             ? "border-[rgba(107,73,50,0.14)] bg-white/86"
             : "border-white/22 bg-white/12"
@@ -44,12 +44,12 @@ export default function Header() {
       >
         <a
           href="#"
-          aria-label="AURELIA Beauty & Wellness home"
-          className={`font-heading text-[26px] font-normal uppercase leading-none tracking-[0.08em] transition-colors ${
+          aria-label="Doctor Khadija Clinic home"
+          className={`font-heading text-[20px] font-normal uppercase leading-none tracking-[0.04em] transition-colors md:text-[22px] ${
             pastHero ? "text-[var(--color-foreground)]" : "text-white"
           }`}
         >
-          Aurelia
+          Dr Khadija
         </a>
 
         <nav
@@ -75,16 +75,9 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center justify-end gap-5 lg:flex">
+         
           <a
-            href="#login"
-            className={`nav-label transition ${
-              pastHero ? "text-[var(--color-foreground)]/82 hover:text-[var(--color-foreground)]" : "text-white/88 hover:text-white"
-            }`}
-          >
-            Login
-          </a>
-          <a
-            href="#book"
+            href="https://wa.me/923124039999"
             className="nav-label inline-flex h-9 items-center gap-2.5 rounded-full bg-primary-1 py-1 pl-4 pr-1 text-white shadow-[0_16px_34px_rgba(78,38,7,0.18)] transition hover:bg-[#a85f13]"
           >
             Book Appointment
@@ -96,7 +89,7 @@ export default function Header() {
 
         <Sheet>
           <SheetTrigger
-            className={`ml-auto inline-flex h-9 w-9 items-center justify-center rounded-full border transition-colors lg:hidden ${
+            className={`ms-auto inline-flex h-9 w-9 items-center justify-center rounded-full border transition-colors lg:hidden ${
               pastHero
                 ? "border-[rgba(107,73,50,0.18)] bg-white/70 text-[var(--color-foreground)]"
                 : "border-white/30 bg-white/18 text-white"
@@ -108,9 +101,9 @@ export default function Header() {
           <SheetContent className="border-[rgba(107,73,50,0.18)] bg-[var(--warm-cream)] p-5 text-[var(--color-foreground)] shadow-[0_20px_70px_rgba(107,73,50,0.18)]">
             <div className="flex items-center gap-3">
               <span className="grid h-10 w-10 place-items-center rounded-full bg-[#c77417] text-white">
-                A
+                K
               </span>
-              <span className="heading-h3 uppercase tracking-[0.05em]">Aurelia</span>
+              <span className="heading-h3 uppercase tracking-[0.05em]">Doctor Khadija Clinic</span>
             </div>
 
             <nav className="mt-6 grid gap-2">
@@ -124,7 +117,7 @@ export default function Header() {
             </nav>
 
             <SheetClose asChild>
-              <a href="#book" className="nav-label mt-6 flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#c77417] px-5 text-white">
+              <a href="https://wa.me/923124039999" className="nav-label mt-6 flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#c77417] px-5 text-white">
                 Book Appointment
                 <ArrowUpRight className="h-4 w-4" />
               </a>

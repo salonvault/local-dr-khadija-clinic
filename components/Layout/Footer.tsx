@@ -1,23 +1,21 @@
 import Image from "next/image";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, MapPin, MessageCircle } from "lucide-react";
 import footerBackground from "../../public/assets/bg.png";
-import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa6";
 
 const links = [
   { label: "Home", href: "#hero" },
-  { label: "Skincare", href: "#services" },
-  { label: "Studio", href: "#studio" },
+  { label: "Results", href: "#services" },
+  { label: "Clinic", href: "#studio" },
   { label: "Services", href: "#treatments" },
   { label: "Reviews", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
 ];
 
-const services = ["Hydra Facial", "Glow Therapy", "Hair Spa", "Manicure", "Pedicure", "Body Treatments"];
+const services = ["Acne & Scars", "Pigmentation", "Hair Loss & PRP", "Laser Treatments", "Aesthetic Procedures", "Dental Care"];
 
 const socialLinks = [
-  { label: "Instagram", href: "https://www.instagram.com/", icon: FaInstagram },
-  { label: "Facebook", href: "https://www.facebook.com/", icon: FaFacebookF },
-  { label: "TikTok", href: "https://www.tiktok.com/", icon: FaTiktok },
+  { label: "Doctor Khadija Clinic on Facebook", href: "https://www.facebook.com/doctorkhadijaclinic/", icon: FaFacebookF },
 ];
 
 export default function Footer() {
@@ -36,11 +34,11 @@ export default function Footer() {
 
         <div className="relative z-10 grid gap-10 px-5 py-8 md:px-8 lg:grid-cols-[1.45fr_0.8fr_0.8fr_1fr] lg:py-10">
           <div>
-            <a href="#hero" className="font-heading text-[42px] font-normal uppercase leading-none tracking-[0.08em]" aria-label="AURELIA Beauty & Wellness home">
-              Aurelia
+            <a href="#hero" className="font-heading text-[36px] font-normal uppercase leading-none tracking-[0.05em]" aria-label="Doctor Khadija Clinic home">
+              Doctor Khadija
             </a>
             <p className="mt-5 max-w-[380px] text-[13px] leading-[1.8] text-white/72">
-              Thoughtful beauty rituals for your most radiant self. Skin, beauty, and wellness care in a calm modern studio.
+              Skin, laser, aesthetic, and dental care by Dr. Khadija Tahir Dar in Gujranwala, with individual consultations and practical treatment plans.
             </p>
             <div className="mt-6 flex items-center gap-2">
               {socialLinks.map((social) => {
@@ -84,23 +82,25 @@ export default function Footer() {
           <div>
             <h3 className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-[#eca15d]">Book</h3>
             <p className="mt-5 max-w-[280px] text-[13px] leading-[1.75] text-white/72">
-              Ready for a little time for you and a lot more confidence?
+              Have a skin, hair, aesthetic, or dental concern? Call or WhatsApp to arrange your visit.
             </p>
             <a
-              href="mailto:hello@aureliabeauty.com"
+              href="https://wa.me/923124039999"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 inline-flex min-h-10 items-center justify-center gap-2 rounded-[7px] bg-[var(--color-primary-1)] px-5 text-[12px] font-bold text-white transition hover:bg-[#a85f13]"
             >
-              <Mail className="h-4 w-4" />
-              Email the studio
+              <MessageCircle className="h-4 w-4" />
+              WhatsApp the clinic
               <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>
         </div>
 
         <div className="relative z-10 flex flex-col gap-3 border-t border-white/14 bg-black/10 px-5 py-5 text-[12px] text-white/62 md:flex-row md:items-center md:justify-between md:px-8">
-          <p>(c) 2026 AURELIA Beauty & Wellness. All rights reserved.</p>
-          <a href="mailto:hello@aureliabeauty.com" className="inline-flex items-center gap-2 hover:text-[#eca15d]">
-            hello@aureliabeauty.com
+          <p>© 2026 Doctor Khadija Clinic. All rights reserved.</p>
+          <a href="tel:+923124039999" className="inline-flex items-center gap-2 transition hover:text-[#eca15d]">
+            <MapPin className="h-3.5 w-3.5" /> Citi Housing, Gujranwala · 0312 4039999
           </a>
         </div>
       </div>

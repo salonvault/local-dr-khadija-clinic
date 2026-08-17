@@ -8,64 +8,69 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const services = [
   {
-    title: "Hydra Facial",
-    text: "Deep cleanse, exfoliation, hydration, and glow support for refreshed skin.",
-    image: "/assets/service1.jpeg",
+    title: "HydraFacial",
+    text: "Deep cleansing, exfoliation, hydration, and nourishment for refreshed, radiant-looking skin.",
+    image: "/assets/services/hydrafacial.jpeg",
   },
   {
-    title: "Signature Facial",
-    text: "A calming skin ritual tailored to your texture, tone, and comfort.",
-    image: "/assets/service2.jpeg",
+    title: "Acne & Acne Scars",
+    text: "Personalized treatments to manage active acne and improve the appearance of acne scars.",
+    image: "/assets/services/acne.jpeg",
   },
   {
-    title: "Deep Cleansing",
-    text: "Clarifying care for congestion, buildup, and skin that needs balance.",
-    image: "/assets/service3.jpeg",
+    title: "Pigmentation & Melasma",
+    text: "Targeted care for melasma, dark spots, uneven tone, and unwanted pigmentation.",
+    image: "/assets/services/pigpentation.jpeg",
   },
   {
-    title: "Glow Therapy",
-    text: "Radiance-focused treatment for soft, healthy-looking luminosity.",
-    image: "/assets/service4.jpeg",
+    title: "Laser Hair Removal",
+    text: "Long-term hair reduction using advanced laser technology for smoother-looking skin.",
+    image: "/assets/services/laser_hair_removal.jpeg",
   },
   {
-    title: "Brow Sculpting",
-    text: "Soft structure and clean definition shaped around your features.",
-    image: "/assets/service5.jpeg",
+    title: "Chemical Peels",
+    text: "Professional exfoliation to improve skin texture, tone, pigmentation, and overall radiance.",
+    image: "/assets/services/chemical_peel.jpeg",
+  },
+   {
+    title: "Hair Loss & PRP",
+    text: "Advanced hair and scalp treatments designed to support healthier growth and reduce hair loss.",
+    image: "/assets/services/Hair_Loss_PRP.jpeg",
   },
   {
-    title: "Hair Spa",
-    text: "Nourishing scalp and hair care for softness, shine, and relaxation.",
-    image: "/assets/service6.jpeg",
+    title: "Microneedling",
+    text: "Collagen-focused treatment to improve skin texture, pores, fine lines, and acne scars.",
+    image: "/assets/services/Microneedling.jpeg",
   },
   {
-    title: "Waxing",
-    text: "Gentle hair removal for smooth, comfortable, and polished skin.",
-    image: "/assets/service7.jpeg",
+    title: "Dermal Fillers",
+    text: "Restorative facial treatments designed to enhance contours and replenish lost volume.",
+    image: "/assets/services/Dermal_Fillers.jpeg",
   },
   {
-    title: "Makeup",
-    text: "Soft glam, event-ready polish, and natural beauty finishing.",
-    image: "/assets/service8.jpeg",
+    title: "Skin Rejuvenation",
+    text: "Advanced treatments focused on improving firmness, texture, tone, and youthful-looking skin.",
+    image: "/assets/services/Skin_Rejuvenation.jpeg",
   },
   {
-    title: "Manicure",
-    text: "Nail shaping, cuticle care, polish, and a clean elegant finish.",
-    image: "/assets/service9.jpeg",
+    title: "Botox Treatment",
+    text: "Precision injectable treatments to soften the appearance of fine lines and facial wrinkles.",
+    image: "/assets/services/botox.jpeg",
   },
   {
-    title: "Pedicure",
-    text: "Comforting foot care with smooth skin, shaping, and polish.",
-    image: "/assets/service10.jpeg",
+    title: "Mole & Skin Tag Removal",
+    text: "Professional assessment and removal of unwanted moles, skin tags, and other benign growths.",
+    image: "/assets/services/Mole_Removal.jpeg",
   },
   {
-    title: "Head & Scalp",
-    text: "A grounding relaxation ritual for tension, calm, and restoration.",
-    image: "/assets/service11.jpeg",
+    title: "Eczema & Psoriasis",
+    text: "Expert dermatological care to manage chronic skin conditions, irritation, inflammation, and flare-ups.",
+    image: "/assets/services/Eczema_Psoriasis.jpeg",
   },
   {
-    title: "Body Treatments",
-    text: "Softening, smoothing, and restorative care for full-body renewal.",
-    image: "/assets/service12.jpeg",
+    title: "Dental Care",
+    text: "Dental consultations, oral health care, teeth whitening, scaling, and cosmetic dental services at the same clinic.",
+    image: "/assets/new/treatment.jpeg",
   },
 ];
 
@@ -114,13 +119,13 @@ export default function ServicesSection() {
     <section ref={sectionRef} id="treatments" className="overflow-hidden py-16 text-white lg:py-20">
       <div className="container">
         <div className="mx-auto max-w-[980px] text-center">
-          <p className="eyebrow text-[var(--color-primary-1)]">Aurelia services</p>
+          <p className="eyebrow text-[var(--color-primary-1)]">Doctor Khadija Clinic services</p>
           <h2 className="heading-h2 mx-auto mt-4 max-w-[860px] text-white">
-            Our goal is to provide expert{" "}
+            Thoughtful care for{" "}
             <span className="inline-block rounded-[7px] bg-[var(--color-primary-1)] px-2 text-white">
-              beauty rituals
+              skin, hair & aesthetics
             </span>{" "}
-            for skin, body, and self-care.
+            — with dental care too.
           </h2>
         </div>
       </div>
@@ -134,7 +139,7 @@ export default function ServicesSection() {
             >
               <Image
                 src={service.image}
-                alt={`${service.title} at Aurelia Beauty & Wellness`}
+                alt={`${service.title} at Doctor Khadija Clinic`}
                 fill
                 sizes="(min-width: 1024px) 310px, 260px"
                 className="object-cover transition duration-500 group-hover:scale-105"
@@ -149,7 +154,7 @@ export default function ServicesSection() {
                 <p className="mt-3 max-w-[230px] text-[12px] font-medium leading-[1.55] text-white/76">
                   {service.text}
                 </p>
-                <a href="#book" className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/22 bg-white/10 px-3 py-2 text-[10px] font-bold uppercase text-white backdrop-blur transition hover:bg-[var(--color-primary-1)]">
+                <a href="https://wa.me/923124039999" className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/22 bg-white/10 px-3 py-2 text-[10px] font-bold uppercase text-white backdrop-blur transition hover:bg-[var(--color-primary-1)]">
                   Book Now
                   <ArrowRight className="h-3 w-3" />
                 </a>

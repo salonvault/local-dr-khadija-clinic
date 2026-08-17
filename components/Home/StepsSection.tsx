@@ -4,38 +4,38 @@ import { CircleSmall } from "lucide-react";
 const steps = [
   {
     number: "01",
-    label: "Consult",
-    heading: "Begin with your skin, your comfort, and the way you want to feel.",
+    label: "Assess",
+    heading: "Begin with your concern, history, routine, and skin examination.",
     bullets: [
-      "Discuss sensitivities, goals, and the amount of visible polish you prefer.",
-      "Choose a ritual that fits your routine instead of overwhelming it.",
+      "Discuss symptoms, previous treatments, sensitivities, medicines, and daily skincare.",
+      "Understand what is bothering you most and what a realistic improvement looks like.",
     ],
   },
   {
     number: "02",
-    label: "Prepare",
-    heading: "Create a calm foundation before any treatment begins.",
+    label: "Diagnose",
+    heading: "Identify the condition before choosing products or procedures.",
     bullets: [
-      "Cleanse, soften, and prepare the skin with gentle, considered products.",
-      "Settle into a quiet pace so the appointment feels restorative.",
+      "Receive a focused clinical assessment based on visible signs and relevant history.",
+      "Discuss suitable options, expected timelines, limitations, and possible downtime.",
     ],
   },
   {
     number: "03",
     label: "Treat",
-    heading: "Layer precise care with warm, attentive technique.",
+    heading: "Follow a plan selected for your diagnosis and day-to-day life.",
     bullets: [
-      "Tailor facial, brow, lash, or wellness steps around your desired result.",
-      "Keep the finish natural, balanced, and easy to live with.",
+      "Combine prescriptions, clinical procedures, or home care only where appropriate.",
+      "Keep every recommendation clear, manageable, and medically responsible.",
     ],
   },
   {
     number: "04",
-    label: "Glow",
-    heading: "Leave with simple aftercare and a refreshed sense of confidence.",
+    label: "Review",
+    heading: "Monitor progress and adjust your care as your skin responds.",
     bullets: [
-      "Share realistic maintenance notes for skin, brows, lashes, or relaxation.",
-      "Recommend the right return window without pressure.",
+      "Leave with written aftercare, warning signs to watch for, and a review timeline.",
+      "Refine the plan at follow-up instead of relying on one-size-fits-all promises.",
     ],
   },
 ];
@@ -82,8 +82,9 @@ export default function StepsSection() {
           <div className="lg:sticky lg:top-24">
             <div className="relative min-h-[420px] overflow-hidden rounded-[8px] border border-[rgba(107,73,50,0.14)] bg-white shadow-[var(--shadow-lift)] lg:h-[min(620px,calc(100vh-7rem))] lg:min-h-0">
               <Image
-                src="/assets/result.jpeg"
-                alt="AURELIA client receiving a relaxing facial ritual"
+                src="/assets/new/happy.jpeg"
+                quality={100}
+                alt="Patient receiving a professional skin treatment at Doctor Khadija Clinic"
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"
                 className="object-cover"
@@ -91,9 +92,9 @@ export default function StepsSection() {
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(48,37,31,0.02)_0%,rgba(48,37,31,0.58)_100%)]" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
-                <p className="text-[10px] font-extrabold uppercase tracking-[0.08em] text-white/78">The Aurelia ritual</p>
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.08em] text-white/78">The Doctor Khadija care journey</p>
                 <h2 className="mt-3 max-w-[420px] font-heading text-[clamp(38px,4vw,62px)] font-semibold leading-[0.96]">
-                  Four calm steps. One radiant finish.
+                  From first consultation to thoughtful follow-up.
                 </h2>
               </div>
             </div>

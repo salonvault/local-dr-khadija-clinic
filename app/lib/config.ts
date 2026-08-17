@@ -1,37 +1,39 @@
 import type { Metadata } from "next";
 
-export const BASE_URL = "https://aurelia-beauty-wellness.vercel.app";
+export const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://doctorkhadijaclinic.com";
 
-const title = "AURELIA Beauty & Wellness | Modern Beauty Studio";
+const title = "Doctor Khadija Clinic | Skin, Aesthetics & Dental Care in Gujranwala";
 const description =
-  "AURELIA Beauty & Wellness offers thoughtful skin, beauty, and wellness rituals designed to help you look refreshed and feel cared for.";
-const ogImage = "/assets/aurelia-hero.png";
+  "Visit Doctor Khadija Clinic in Gujranwala for consultation-led skin and aesthetic care, laser treatments, acne, pigmentation, hair loss, and dental services.";
+const ogImage = "/assets/og-image.png";
 
 export const seoMetadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     default: title,
-    template: "%s | AURELIA Beauty & Wellness",
+    template: "%s | Doctor Khadija Clinic",
   },
   description,
-  applicationName: "AURELIA Beauty & Wellness",
+  applicationName: "Doctor Khadija Clinic",
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
-  category: "Beauty & Wellness Studio",
+  category: "Skin, Aesthetics and Dental Clinic",
   keywords: [
-    "AURELIA Beauty & Wellness",
-    "modern beauty studio",
-    "signature facial",
-    "deep cleansing facial",
-    "hydration treatment",
-    "glow therapy",
-    "brow sculpting",
-    "lash lift",
-    "relaxation ritual",
+    "Doctor Khadija Clinic",
+    "dermatologist Gujranwala",
+    "skin clinic Gujranwala",
+    "aesthetic clinic Gujranwala",
+    "acne treatment Gujranwala",
+    "pigmentation treatment Gujranwala",
+    "laser hair removal Gujranwala",
+    "hair loss treatment Gujranwala",
+    "dental clinic Gujranwala",
+    "Dr Khadija Tahir Dar",
   ],
-  authors: [{ name: "AURELIA Beauty & Wellness" }],
-  creator: "AURELIA Beauty & Wellness",
-  publisher: "AURELIA Beauty & Wellness",
+  authors: [{ name: "Doctor Khadija Clinic" }],
+  creator: "Doctor Khadija Clinic",
+  publisher: "Doctor Khadija Clinic",
   alternates: {
     canonical: BASE_URL,
   },
@@ -55,9 +57,9 @@ export const seoMetadata: Metadata = {
     : {}),
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_PK",
     url: BASE_URL,
-    siteName: "AURELIA Beauty & Wellness",
+    siteName: "Doctor Khadija Clinic",
     title,
     description,
     images: [
@@ -65,7 +67,7 @@ export const seoMetadata: Metadata = {
         url: ogImage,
         width: 1536,
         height: 1024,
-        alt: "AURELIA Beauty & Wellness warm facial treatment studio",
+        alt: "Doctor Khadija Clinic in Gujranwala",
       },
     ],
   },

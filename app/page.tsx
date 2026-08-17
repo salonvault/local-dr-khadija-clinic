@@ -7,8 +7,10 @@ import ProcessFaqSection from "@/components/Home/ProcessFaqSection"
 import TestimonialsSection from "@/components/Home/TestimonialsSection"
 import GallerySection from "@/components/Home/GallerySection"
 import ServicesSection from "@/components/Home/ServicesSection"
+import CarePathwaysSection from "@/components/Home/CarePathwaysSection"
 import Header from "@/components/Layout/Header"
 import Footer from "@/components/Layout/Footer"
+import WhatsAppFloat from "@/components/Layout/WhatsAppFloat"
 
 
 function page() {
@@ -18,6 +20,7 @@ function page() {
       <main>
         <Hero />
         <ExpertiseStripSection />
+        <CarePathwaysSection />
         <ExperienceSection />
         <ServicesSection />
         <GallerySection />
@@ -26,6 +29,7 @@ function page() {
         <TestimonialsSection />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   )
 }
