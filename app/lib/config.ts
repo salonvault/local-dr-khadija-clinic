@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
-export const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://doctorkhadijaclinic.com";
+export const BASE_URL ="https://dr-khadija-clinic.vercel.app";
 
 const title = "Doctor Khadija Clinic | Skin, Aesthetics & Dental Care in Gujranwala";
 const description =
